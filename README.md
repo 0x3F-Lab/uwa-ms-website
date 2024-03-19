@@ -34,7 +34,7 @@ sudo rm -rf ~/*
 
 ## Workflow
 
-individual branches for what you are working on
+individual branches for what you are working on (these should be branched from DEVELOPMENT)
 
 then into development 
 
