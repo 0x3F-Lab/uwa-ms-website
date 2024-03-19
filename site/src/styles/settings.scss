@@ -1,0 +1,46 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// https://vuetifyjs.com/features/sass-variables/`
+// @use 'vuetify/settings' with (
+//   $color-pack: false
+// );
+
+:root {
+    --off-white: #EAEAEA;
+    --blue: #647DAE;
+    --orange: #F08B58;
+    --pink: #F19BD0;
+    --grey: #474747;
+  }
+
+  @font-face {
+    font-family: 'HelveticaWorld';
+    src: url('/fonts/HelveticaWorld-Regular.ttf-Regular.woff') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roxborough';
+    src: url('/fonts/RoxboroughCF-Regular.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Roxborough';
+    src: url('/fonts/RoxboroughCF-Bold.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Roxborough';
+    src: url('/fonts/RoxboroughCF-ExtraBold.otf') format('otf');
+    font-weight: bolder;
+    font-style: normal;
+  }
