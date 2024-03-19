@@ -39,7 +39,9 @@ individual branches for what you are working on (these should be branched from D
 then into development 
 
 development - writing code
+
 staging - testing, before rollout
+
 main (production) - live website
 
 multiple stages of merging and reviewing PRs to ensure nothing gets fucked up 
