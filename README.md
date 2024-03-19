@@ -45,3 +45,18 @@ staging - testing, before rollout
 main (production) - live website
 
 multiple stages of merging and reviewing PRs to ensure nothing gets fucked up 
+
+## Other important stuff
+
+Custom font and colour defs are in `settings.scss` and `vuetify.js`
+
+You can use them in CSS as:
+```
+color: var(--customColourName)
+```
+
+or inline any vuetify component with:
+```
+<v-item color="blue">
+```
+fonts can be used as normal with specified weights
