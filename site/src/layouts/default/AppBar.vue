@@ -27,7 +27,7 @@
     body{ 
         background-color: #E9E9E9; 
         font-family: Roxborough;
-        height: 150px;
+        height: 160px;
         border-bottom: 1px solid #888;
     }
 
@@ -40,13 +40,13 @@
 
     nav ul li:first-child { 
         float: left; 
-        margin-left: 80px;
+        margin-left: 90px;
         padding-top: 10px;
     }
 
     nav ul li { 
         list-style:none;
-        margin:45px;
+        margin:55px;
         float: right; 
         margin-right: 65px;
     }
@@ -65,10 +65,10 @@
 
     .logo{
         position: absolute;
-        left: 30%;
-        right: 30%;
-        width: 40%;
-        padding-top: 35px;
+        left: 32%;
+        right: 33%;
+        width: 36%;
+        padding-top: 49px;
     }
 </style>
 
