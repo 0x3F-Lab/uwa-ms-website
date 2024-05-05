@@ -19,53 +19,51 @@
 </template>
 
 <style>
-  body{ 
-      background-color: #E9E9E9; 
-      font-family: Roxborough;
-  }
-
-  a { 
-      text-decoration: none; 
-      color: #474747;
-      font-size: 20px;
-      font-weight: bold;
-    } 
-    
-  nav ul li:first-child { 
-      float: left; 
-      margin-left: 70px;
-      padding-top: 10px;
-  }
-
-  nav ul li { 
-      list-style:none;
-      margin:40px;
-      float: right; 
-      margin-right: 60px;
+    body{ 
+        background-color: #E9E9E9; 
+        font-family: Roxborough;
+        height: 150px;
+        border-bottom: 1px solid #888;
     }
 
-  .join{
-      border-radius: 25px;
-      background: #E59ECD;
-      padding-top: 10px;
-      padding-bottom: 13px;
-      padding-left: 35px;
-      padding-right: 35px;
-      outline-style: solid;
-      outline-color: #474747;
-      outline-width: thin;
-  }
+    a { 
+        text-decoration: none; 
+        color: #474747;
+        font-size: 20px;
+        font-weight: bold;
+    } 
 
-  .logo{
-      position: absolute;
-      left: 30%;
-      right: 30%;
-      width: 40%;
-      padding-top: 30px;
-  }
+    nav ul li:first-child { 
+        float: left; 
+        margin-left: 80px;
+        padding-top: 10px;
+    }
 
-  .line {
-      border-bottom: 1px solid #888;
+    nav ul li { 
+        list-style:none;
+        margin:45px;
+        float: right; 
+        margin-right: 65px;
+    }
+
+    .join{
+        border-radius: 25px;
+        background: #E59ECD;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 35px;
+        padding-right: 35px;
+        outline-style: solid;
+        outline-color: #474747;
+        outline-width: thin;
+    }
+
+    .logo{
+        position: absolute;
+        left: 30%;
+        right: 30%;
+        width: 40%;
+        padding-top: 35px;
     }
 </style>
 
