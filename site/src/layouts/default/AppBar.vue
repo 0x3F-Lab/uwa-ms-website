@@ -19,6 +19,11 @@
 </template>
 
 <style>
+    @font-face {
+        font-family: Roxborough;
+        src: url('../../../fonts/RoxboroughCF-Bold.otf');
+    }
+
     body{ 
         background-color: #E9E9E9; 
         font-family: Roxborough;
