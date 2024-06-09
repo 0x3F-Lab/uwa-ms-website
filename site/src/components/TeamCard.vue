@@ -8,7 +8,7 @@
 
             <v-card-text id="infobox">
                 <h2>Name</h2>
-                <p>Position</p>
+                <p>position</p>
             </v-card-text>
 
         </v-card>

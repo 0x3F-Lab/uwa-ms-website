@@ -33,6 +33,10 @@
         font-family: Roxborough;
         src: url('../../../fonts/RoxboroughCF-Bold.otf');
     }
+
+    * {
+        font-family: Roxborough;
+    }
    
     #OurTeam {
         border: 0px solid black;
