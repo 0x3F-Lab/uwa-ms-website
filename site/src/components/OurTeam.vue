@@ -18,8 +18,8 @@
 
             <h1 id="subtitleText">Want to join us? Positions are <span 
                 style="color: #687db0">open</span>! Apply 
-                <span style="color: #E29062; text-decoration: underline;" span>
-                    here</span></h1>
+                <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                style="color: #E29062; text-decoration: underline;" span>here</a></h1>
 
     </v-container>
 
@@ -56,6 +56,7 @@
 
     #subtitleText {
         text-align: center;
+        transform: translateY(-40%);
     }
     
 </style>
