@@ -50,8 +50,8 @@
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    text-indent: 60px;
-    font-size: 33px;
+    text-indent: 4.167%;
+    font-size: 2.063em;
     font-weight: bold;
   }
 
@@ -74,21 +74,21 @@
   }
 
   .card-container {
-    margin-left: 745px; 
-    margin-right: 30px;
+    margin-left: 51.736%; 
+    margin-right: 2.083%;
     width: 50%;
     height: 90%;
     
   }
 
   .card-title{
-    font-size: 35px !important;
+    font-size: 2.188em !important;
     color: #E29062;
     margin-top: 10px;
   }
 
   .card-text {
-    font-size: 18px !important;
+    font-size: 1.125em !important;
     font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
     margin-top: 20px;
   }
@@ -96,6 +96,53 @@
   .card {
     font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
   }
+
+      /* Extra small devices (phones, 600px and down) */
+      @media only screen and (max-width: 600px) {
+        body{
+            font-size: 6px;
+        }
+
+        .slogan{
+          border-bottom: 0.5px solid #888;
+        }
+
+        .about{
+          border-bottom: 0.5px solid #888;
+        }
+
+        .vl {
+          border-left: 0.5px solid #888;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        body{
+            font-size: 10px;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        body{
+            font-size: 12px;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px){
+        body{
+            font-size: 14px;
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        body{
+            font-size: 16px;
+        }
+    }
 
 </style>
 
