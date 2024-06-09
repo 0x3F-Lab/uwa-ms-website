@@ -1,18 +1,15 @@
 <template>
-
     <v-container id="OurTeam">
-
 
             <h1 id="titleText"> Our Team </h1>
 
-
             <v-container id="imagecontainer">
 
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
+                <TeamCard name="Name 1" position="Position" />
+                <TeamCard name="Name 2" position="Position" />
+                <TeamCard name="Name 3" position="Position" />
+                <TeamCard name="Name 4" position="Position" />
+                <TeamCard name="Name 5" position="Position" />
 
             </v-container>
 
@@ -22,13 +19,9 @@
                 style="color: #E29062; text-decoration: underline;" span>here</a></h1>
 
     </v-container>
-
-
-
 </template>
 
 <style scoped>
-
     @font-face {
         font-family: Roxborough;
         src: url('../../../fonts/RoxboroughCF-Bold.otf');
@@ -59,7 +52,6 @@
         font-size: max(1.5vw, 20px);
         transform: translateY(-40%);
     }
-    
 </style>
 
 <script setup>
