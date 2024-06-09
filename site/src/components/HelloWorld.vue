@@ -1,4 +1,4 @@
-// This is an example of a component
+// This contains the slogan and 'Who are we' segments
 
 <template>
   <div class="slogan">
