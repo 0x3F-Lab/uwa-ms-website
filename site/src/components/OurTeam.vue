@@ -17,8 +17,8 @@
             </v-container>
 
             <h1 id="subtitleText">Want to join us? Positions are <span 
-                style="color: rgb(135, 206, 235)">open</span>! Apply 
-                <span style="color: orange; text-decoration: underline;" span>
+                style="color: #687db0">open</span>! Apply 
+                <span style="color: #E29062; text-decoration: underline;" span>
                     here</span></h1>
 
     </v-container>
@@ -50,7 +50,7 @@
     }
 
     #titleText {
-        color: orange;
+        color: #E29062;
         text-align: center;
     }
 

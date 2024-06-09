@@ -4,7 +4,7 @@
 
         <v-card class="team-card">
 
-            <img src="@/images/sample_man.jpg" alt="stock man">
+            <img class="rounded-xl" src="@/images/sample_man.jpg" alt="stock man">
 
             <v-card-text id="infobox">
                 <h2>Name</h2>
@@ -21,10 +21,14 @@
 
 <style scoped>
 
+    #BigDiv {
+        
+    }
+
     img {
         width: 100%;
         height: auto;
-        border: 1px solid black;
+        display: block;
     }
 
     h2, p {
@@ -33,16 +37,16 @@
 
     .team-card {
         background-color: transparent;
-        box-shadow: none
+        box-shadow: none;
     }
 
     h2 {
-        color: rgb(135, 206, 235);
+        color: #687db0;
     }
 
     p {
         padding-top: 5%;
-        color: pink;
+        color: #E59ECD;
     }
 
 </style>
