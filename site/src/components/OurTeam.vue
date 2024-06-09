@@ -3,20 +3,23 @@
     <v-container id="OurTeam">
 
 
-            <h1> Our Team </h1>
+            <h1 id="titleText"> Our Team </h1>
 
 
             <v-container id="imagecontainer">
 
-                <img src="@/images/sample_man.jpg" alt="stock man">
-                <img src="@/images/sample_man.jpg" alt="stock man">
-                <img src="@/images/sample_man.jpg" alt="stock man">
-                <img src="@/images/sample_man.jpg" alt="stock man">
-                <img src="@/images/sample_man.jpg" alt="stock man">
+                <TeamCard />
+                <TeamCard />
+                <TeamCard />
+                <TeamCard />
+                <TeamCard />
 
             </v-container>
 
-
+            <h1 id="subtitleText">Want to join us? Positions are <span 
+                style="color: rgb(135, 206, 235)">open</span>! Apply 
+                <span style="color: orange; text-decoration: underline;" span>
+                    here</span></h1>
 
     </v-container>
 
@@ -24,31 +27,35 @@
 
 </template>
 
-<style>
+<style scoped>
+
+    @font-face {
+        font-family: Roxborough;
+        src: url('../../../fonts/RoxboroughCF-Bold.otf');
+    }
    
     #OurTeam {
-        background-color: black;
-        border: 1px solid black;     
+        border: 0px solid black;
+        width: 95%;     
     }
+    
     #imagecontainer {
-        background-color: red;
         display: flex;
         align-items: center;
         justify-content: space-around;
-  
     }
-    img {
-        width: 14%;
-        height: auto;
-        margin: 1%;
-    }
-    h1 {
+
+    #titleText {
         color: orange;
-        background-color: beige;
         text-align: center;
     }
+
+    #subtitleText {
+        text-align: center;
+    }
+    
 </style>
 
 <script setup>
-  //
+  import TeamCard from '@/components/TeamCard.vue';
 </script>
