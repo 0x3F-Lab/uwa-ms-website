@@ -18,7 +18,7 @@
     img {
         width: 100%;
         height: auto;
-        display: block;
+        display: flex;
     }
 
     h2, p {

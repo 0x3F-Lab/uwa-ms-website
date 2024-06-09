@@ -33,23 +33,25 @@
    
     #OurTeam {
         border: 0px solid black;
-        width: 95%;     
+        width: 100%;     
     }
     
     #imagecontainer {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        width: 85%;
     }
 
     #titleText {
         color: #E29062;
         text-align: center;
+        font-size: max(2.5vw,35px);
     }
 
     #subtitleText {
         text-align: center;
-        font-size: max(1.5vw, 20px);
+        font-size: max(1.5vw, 19px);
         transform: translateY(-40%);
     }
 </style>
