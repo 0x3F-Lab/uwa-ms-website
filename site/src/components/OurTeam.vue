@@ -56,6 +56,7 @@
 
     #subtitleText {
         text-align: center;
+        font-size: max(1.5vw, 20px);
         transform: translateY(-40%);
     }
     
