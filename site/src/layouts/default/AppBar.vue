@@ -2,7 +2,7 @@
 
 <template>
   <body>
-    <img class="logo" src="../../../logo.svg" width="500"/>
+    <img class="logo" src="../../../newLogo.png" width="500"/>
     <nav>
         <ul>
             <li>
@@ -34,15 +34,16 @@
     }
 
     body{ 
+        transition: ease all .05s;
         background-color: #E9E9E9; 
         font-family: Roxborough;
-        height: 42.667%;
+        height: 9.5vw;
         border-bottom: 1px solid #888;
     }
 
     a { 
         text-decoration: none; 
-        color: #474747;
+        color: #484848;
         font-size: 1.25em;
         font-weight: bold;
     } 
@@ -54,13 +55,13 @@
         font-weight: bold;
         float: left; 
         margin-left: 6.25%;
-        padding-top: 0.694%;
+        padding-top: 0.5%;
     }
 
     /* join link */
     nav ul li { 
         list-style:none;
-        margin: 3.819%;
+        margin: 3.3%;
         float: right; 
         margin-right: 4.514%;
     }
@@ -71,16 +72,16 @@
         background: #E59ECD;
         padding: 0.694% 2.431%;
         outline-style: solid;
-        outline-color: #484848;
+        outline-color: #6c6c6c;
         outline-width: 1px;
     }
 
     .logo{
         position: absolute;
-        left: 32%;
+        left: 32.9%;
         right: 33%;
-        width: 36%;
-        padding-top: 3.403%;
+        width: 34%;
+        padding-top: 2.6%;
     }
 
     /* The container <div> - needed to position the dropdown content */
@@ -118,6 +119,7 @@
         body{
             font-size: 6px;
             border-bottom: 0.5px solid #888;
+            height: 9.9vw;
         }
         .join{
             outline-width: 0.5px;
@@ -125,23 +127,26 @@
     }
 
     /* Small devices (portrait tablets and large phones, 600px and up) */
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
         body{
-            font-size: 10px;
+            font-size: 9px;
+            height: 9.8vw;
         }
     }
 
     /* Medium devices (landscape tablets, 768px and up) */
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
         body{
-            font-size: 12px;
+            font-size: 11px;
+            height: 9.7vw;
         }
     }
 
     /* Large devices (laptops/desktops, 992px and up) */
-    @media only screen and (min-width: 992px){
+    @media only screen and (min-width: 992px) and (max-width: 1200px){
         body{
-            font-size: 14px;
+            font-size: 13px;
+            height: 9.6vw;
         }
     }
 
