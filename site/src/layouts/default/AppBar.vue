@@ -124,6 +124,9 @@
         .join{
             outline-width: 0.5px;
         }
+        .dropdown-content {
+            border-radius: 10px;
+        }
     }
 
     /* Small devices (portrait tablets and large phones, 600px and up) */
