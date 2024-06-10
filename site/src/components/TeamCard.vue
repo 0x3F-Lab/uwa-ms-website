@@ -31,12 +31,12 @@
     }
 
     h2 {
-        color: #687db0;
+        color: var(--blue);
     }
 
     p {
         padding-top: 5%;
-        color: #E59ECD;
+        color: var(--pink);
     }
 </style>
 

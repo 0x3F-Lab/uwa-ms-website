@@ -14,9 +14,9 @@
             </v-container>
 
             <h1 id="subtitleText">Want to join us? Positions are <span 
-                style="color: #687db0">open</span>! Apply 
+                style="color: var(--blue)">open</span>! Apply 
                 <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                style="color: #E29062; text-decoration: underline;" span>here</a></h1>
+                style="color: var(--orange); text-decoration: underline;" span>here</a></h1>
 
     </v-container>
 </template>
@@ -34,6 +34,7 @@
     #OurTeam {
         border: 0px solid black;
         width: 100%;     
+        background-color: var(--off-white);
     }
     
     #imagecontainer {
@@ -73,7 +74,7 @@
 
 
     #titleText {
-        color: #E29062;
+        color: var(--orange);
         text-align: center;
         font-size: max(2.5vw,35px);
     }
