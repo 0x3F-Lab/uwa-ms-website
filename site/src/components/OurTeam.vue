@@ -5,11 +5,11 @@
 
             <v-container id="imagecontainer">
 
-                <TeamCard name="Name 1" position="Position" />
-                <TeamCard name="Name 2" position="Position" />
-                <TeamCard name="Name 3" position="Position" />
-                <TeamCard name="Name 4" position="Position" />
-                <TeamCard name="Name 5" position="Position" />
+                <TeamCard name="Name 1" position="Position" image="/images/sample_1.jpg"/>
+                <TeamCard name="Name 2" position="Position" image="/images/sample_2.jpg"/>
+                <TeamCard name="Name 3" position="Position" image="/images/sample_3.jpg"/>
+                <TeamCard name="Name 4" position="Position" image="/images/sample_4.jpg"/>
+                <TeamCard name="Name 5" position="Position" image="/images/sample_5.jpg"/>
 
             </v-container>
 
@@ -24,7 +24,7 @@
 <style scoped>
     @font-face {
         font-family: Roxborough;
-        src: url('../../../fonts/RoxboroughCF-Bold.otf');
+        src: url('/fonts/RoxboroughCF-Bold.otf');
     }
 
     * {

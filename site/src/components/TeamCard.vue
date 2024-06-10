@@ -2,7 +2,7 @@
     <v-container id="BigDiv">
         <v-card class="team-card">
 
-            <img class="rounded-xl" src="@/images/sample_man.jpg" alt="stock man">
+            <img class="rounded-xl" :src="image" alt="Committe Photo">
 
             <v-card-text id="infobox">
 
@@ -45,6 +45,10 @@ import { defineProps } from 'vue';
 
 const props = defineProps({
     name: String,
-    position: String
+    position: String,
+    image: {
+        type: String,
+        required: true
+    }
 });
 </script>
