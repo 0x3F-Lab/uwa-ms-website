@@ -84,7 +84,6 @@ const past = ref([
 .event-list {
   display: flex;
   overflow: scroll;
-  gap: 0;
   padding: 1.5rem 0.5rem;
 }
 
@@ -133,7 +132,6 @@ const past = ref([
   .category {
     writing-mode: unset;
     transform: none;
-    align-self: unset;
   }
 
   .category:nth-child(3) {
