@@ -22,12 +22,12 @@
   </v-container>
 </template>
 
-
 <style>
 @font-face {
   font-family: Roxborough;
   src: url('../../../fonts/RoxboroughCF-Bold.otf');
 }
+
 .slogan {
   transition: ease all .05s;
   background-color: #E9E9E9;
@@ -91,7 +91,21 @@
   font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
 }
 
-/* Mobile styles */
+/* Responsive styles */
+@media only screen and (max-width: 1300px) {
+  .card-title {
+    font-size: 1.8em !important;
+  }
+
+  .card-text {
+    font-size: 0.9em !important;
+  }
+
+  .card-container {
+    height: auto;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .slogan {
     font-size: 1em;
@@ -128,6 +142,4 @@
     font-size: 1em; 
   }
 }
-
 </style>
-
