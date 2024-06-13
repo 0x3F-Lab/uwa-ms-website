@@ -1,164 +1,218 @@
-// This is the app bar 
-
 <template>
-  <body>
-    <img class="logo" src="../../../newLogo.png" width="500"/>
-    <nav>
+  <div class="top-nav">
+    <div class="left-wrapper">
+      <nav class="left-menu">
         <ul>
-            <li>
-                <div class="dropdown">
-                    <button class="dropbtn">menu</button>
-                    <div class="dropdown-content">
-                        <a href="#">Become a Member</a>
-                        <a href="#">About Us</a>
-                        <a href="#">Events</a>
-                        <a href="#">Join Our Committee</a>
-                        <a href="#">Contact Us</a>
-                    </div>
-                </div>
-            </li>
+          <li class="join">
+            <a href="#">Join Us!</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <img class="logo" src="../../../newLogo.png" />
+    <div class="right-wrapper">
+      <nav class="right-menu">
         <ul>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">menu</button>
+              <div class="dropdown-content">
+                <a href="#">Become a Member</a>
+                <a href="#">About Us</a>
+                <a href="#">Events</a>
+                <a href="#">Join Our Committee</a>
+                <a href="#">Contact Us</a>
+              </div>
+            </div>
+          </li>
         </ul>
-            <li class="join">
-                <a href= "#">Join Us!</a>
-            </li>
-        </ul>
-    </nav>
-  </body>
+      </nav>
+    </div>
+  </div>
 </template>
 
 <style>
-    @font-face {
-        font-family: Roxborough;
-        src: url('../../../fonts/RoxboroughCF-Bold.otf');
-    }
+@font-face {
+  font-family: Roxborough;
+  src: url('../../../fonts/RoxboroughCF-Bold.otf');
+}
 
-    body{ 
-        transition: ease all .05s;
-        background-color: #E9E9E9; 
-        font-family: Roxborough;
-        height: 9.5vw;
-        border-bottom: 1px solid #888;
-    }
+.top-nav { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #E9E9E9; 
+  font-family: Roxborough;
+  border-bottom: 1px solid #888;
+  height: auto;
+  transition: ease all .05s;
+}
 
-    a { 
-        text-decoration: none; 
-        color: #484848;
-        font-size: 1.25em;
-        font-weight: bold;
-    } 
+.left-wrapper, .right-wrapper {
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
 
-    /* menu drop down */
-    nav ul li:first-child { 
-        font-size: 1.25em;
-        color: #697CAA;
-        font-weight: bold;
-        float: left; 
-        margin-left: 6.25%;
-        padding-top: 0.5%;
-    }
+.left-wrapper {
+  flex: 1;
+  justify-content: flex-start;
+}
 
-    /* join link */
-    nav ul li { 
-        list-style:none;
-        margin: 3.3%;
-        float: right; 
-        margin-right: 4.514%;
-    }
+.right-wrapper {
+  flex: 1;
+  justify-content: flex-end;
+}
 
-    /* join button */
-    .join{
-        border-radius: 25px;
-        background: #E59ECD;
-        padding: 0.694% 2.431%;
-        outline-style: solid;
-        outline-color: #6c6c6c;
-        outline-width: 1px;
-    }
+a { 
+  text-decoration: none; 
+  color: #484848;
+  font-size: 1.25rem;
+  font-weight: bold;
+} 
 
-    .logo{
-        position: absolute;
-        left: 32.9%;
-        right: 33%;
-        width: 34%;
-        padding-top: 2.6%;
-    }
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
+.logo {
+  width: 30vw;
+  flex: 0 1 auto;
+}
 
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-        border-radius: 15px;
-        padding: 11.538%;
-        display: none;
-        position: absolute;
-        background-color: #E9E9E9;
-        min-width: 403.846%;
-        box-shadow: 0px 4px 12px 0px rgba(71, 71, 71, 0.2);
-        z-index: 1;
-    }
+.dropdown {
+  position: relative;
+}
 
-    .dropdown-content a {
-        color: #474747;
-        font-size: 0.9em;
-        padding: 6%;
-        text-decoration: none;
-        display: block;
-    }
+.dropbtn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #697CAA;
+  cursor: pointer;
+}
 
-    .dropdown-content a:hover {color: #E59ECD;}
+.dropdown-content {
+  border-radius: 15px;
+  display: none;
+  position: absolute;
+  background-color: #E9E9E9;
+  min-width: 200px;
+  box-shadow: 0px 4px 12px 0px rgba(71, 71, 71, 0.2);
+  z-index: 1;
+  font-size: 1.25rem;
+  right: 0; 
+  padding: 20px;
+}
 
-    .dropdown:hover .dropdown-content {display: block;}
+.dropdown-content a {
+  color: #474747;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
 
-    /* Extra small devices (phones, 600px and down) */
-    @media only screen and (max-width: 600px) {
-        body{
-            font-size: 6px;
-            border-bottom: 0.5px solid #888;
-            height: 9.9vw;
-        }
-        .join{
-            outline-width: 0.5px;
-        }
-        .dropdown-content {
-            border-radius: 10px;
-        }
-    }
+.dropdown-content a:hover {
+  color: #E59ECD;
+}
 
-    /* Small devices (portrait tablets and large phones, 600px and up) */
-    @media only screen and (min-width: 600px) and (max-width: 768px) {
-        body{
-            font-size: 9px;
-            height: 9.8vw;
-        }
-    }
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-    /* Medium devices (landscape tablets, 768px and up) */
-    @media only screen and (min-width: 768px) and (max-width: 992px) {
-        body{
-            font-size: 11px;
-            height: 9.7vw;
-        }
-    }
+.join {
+  border-radius: 25px;
+  background: #E59ECD;
+  padding: 10px 20px;
+  outline-style: solid;
+  outline-color: #6c6c6c;
+  outline-width: 1px;
+}
 
-    /* Large devices (laptops/desktops, 992px and up) */
-    @media only screen and (min-width: 992px) and (max-width: 1200px){
-        body{
-            font-size: 13px;
-            height: 9.6vw;
-        }
-    }
+@media only screen and (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
 
-    /* Extra large devices (large laptops and desktops, 1200px and up) */
-    @media only screen and (min-width: 1200px) {
-        body{
-            font-size: 16px;
-        }
-    }
+  .logo {
+    width: 70vw;
+    margin-bottom: 10px;
+  }
+
+  .left-menu, .right-menu {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .left-menu {
+    order: 1;
+    display: none;
+  }
+
+  .right-menu {
+    order: 2;
+  }
+
+  .dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dropdown-content a {
+    font-size: 0.8rem !important;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .top-nav {
+    padding: 1rem;
+  }
+
+
+  .dropbtn, .join a {
+    font-size: 1rem;
+    color: #E59ECD;
+  }
+
+  .dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .top-nav {
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .top-nav {
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .top-nav {
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .top-nav {
+    padding: 1.5rem;
+  }
+}
 
 </style>
 
