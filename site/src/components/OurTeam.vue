@@ -30,13 +30,13 @@
     * {
         font-family: Roxborough;
     }
-   
+
     #OurTeam {
         border: 0px solid black;
-        width: 100%;     
+        width: 100%;
         background-color: var(--off-white);
     }
-    
+
     #imagecontainer {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -45,13 +45,33 @@
         margin: auto;
     }
 
+    #titleText {
+        color: var(--orange);
+        text-align: center;
+        font-size: 2.4em;
+    }
 
+    #subtitleText {
+        text-align: center;
+        transform: translateY(-40%);
+        font-size: 1.3em;
+    }
 
-    @media (max-width: 768px) {
+    /* Responsive styles */
+    @media only screen and (max-width: 1280px) {
+        #titleText {
+            font-size: 2em !important;
+        }
+
+        #subtitleText, a {
+            font-size: 1.1em !important;
+        }
+    }
+
+    @media only screen and (max-width: 900px) {
         #imagecontainer {
             grid-template-columns: repeat(3, 2fr);
         }
-
         #imagecontainer > :nth-child(n+4):nth-child(-n+6) {
             justify-self: center;
             display: flex;
@@ -60,32 +80,33 @@
         }
     }
 
-    @media (max-width: 480px) {
+    @media only screen and (max-width: 768px) {
+        #titleText {
+            font-size: 1.5em !important;
+        }
+
+        #subtitleText, a {
+            font-size: 1em !important;
+        }
+
         #imagecontainer {
-            grid-template-columns: repeat(2, 2fr);
+            grid-template-columns: repeat(3, 2fr);
+            gap: 0.5rem;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        #imagecontainer {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
         }
         #imagecontainer > :nth-child(n+4):nth-child(-n+6) {
-            justify-self: center;
-            display: flex;
-            align-items: center;
             transform: none;
         }
+
         #imagecontainer > :nth-child(5) {
             transform: translateX(55%) !important;
         }
-    }
-
-
-    #titleText {
-        color: var(--orange);
-        text-align: center;
-        font-size: max(2.5vw,35px);
-    }
-
-    #subtitleText, a {
-        text-align: center;
-        font-size: max(1.5vw, 19px);
-        transform: translateY(-40%);
     }
 </style>
 

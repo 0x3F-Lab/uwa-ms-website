@@ -22,7 +22,7 @@
   </v-container>
 </template>
 
-<style>
+<style scoped>
 @font-face {
   font-family: Roxborough;
   src: url('../../../fonts/RoxboroughCF-Bold.otf');
@@ -92,7 +92,7 @@
 }
 
 /* Responsive styles */
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1280px) {
   .card-title {
     font-size: 1.8em !important;
   }

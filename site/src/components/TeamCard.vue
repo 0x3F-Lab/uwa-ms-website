@@ -32,11 +32,37 @@
 
     h2 {
         color: var(--blue);
+        font-size: 1.5em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     p {
         padding-top: 5%;
         color: var(--pink);
+        font-size: 1em;
+    }
+
+    /* Responsive styles */
+    @media only screen and (max-width: 1280px) {
+        h2 {
+            font-size: 1.2em !important;
+        }
+
+        p {
+            font-size: 0.8em !important;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        h2 {
+            font-size: 1.1em !important;
+        }
+
+        p, a {
+            font-size: 0.8em !important;
+        }
     }
 </style>
 
