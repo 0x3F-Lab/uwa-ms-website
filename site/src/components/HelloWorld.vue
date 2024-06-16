@@ -13,12 +13,8 @@
       </v-card>
     </div>
   </div>
-  <v-container fluid>
-    <v-row dense>
-      <v-col v-for="n in 4" :key="n" cols="12">
-        <v-card class="card" color="orange" :subtitle="`Subtitle for Content ${n}`" :title="`Example Content ${n}`" text="Lorem ipsum dolor sit amet consectetur, adipisicing elit."></v-card>
-      </v-col>
-    </v-row>
+  <v-container id="list-container" fluid>
+    <EventList />
   </v-container>
 </template>
 
@@ -26,6 +22,11 @@
 @font-face {
   font-family: Roxborough;
   src: url('../../../fonts/RoxboroughCF-Bold.otf');
+}
+
+#list-container {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .slogan {
@@ -143,3 +144,7 @@
   }
 }
 </style>
+
+<script setup>
+import EventList from "@/components/EventList.vue";
+</script>

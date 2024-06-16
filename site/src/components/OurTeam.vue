@@ -1,5 +1,5 @@
 <template>
-    <v-container id="OurTeam">
+    <div id="OurTeam">
 
             <h1 id="titleText"> Our Team </h1>
 
@@ -18,7 +18,7 @@
                 <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 style="color: var(--orange); text-decoration: underline;">here</a></h1>
 
-    </v-container>
+            </div>
 </template>
 
 <style scoped>
@@ -32,6 +32,7 @@
     }
 
     #OurTeam {
+        padding: 4vh;
         border: 0px solid black;
         width: 100%;
         background-color: var(--off-white);
