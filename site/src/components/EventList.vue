@@ -41,7 +41,7 @@ const past = ref([
 </script>
 
 <template>
-  <div class="outer">
+  <div class="outer" id="events">
     <span class="heading">Events</span>
     <div class="event-list">
       <div class="category">upcoming</div>

@@ -1,12 +1,12 @@
 //This is the main view we will be editing and putting components in
 
 <template>
-  <HelloWorld />
+  <HeaderSection />
 
   <OurTeam />
 </template>
 
 <script setup>
   import OurTeam from '@/components/OurTeam.vue'
-  import HelloWorld from '@/components/HelloWorld.vue'
+  import HeaderSection from '@/components/HeaderSection.vue'
 </script>

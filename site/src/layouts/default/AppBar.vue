@@ -17,10 +17,10 @@
             <div class="dropdown">
               <button class="dropbtn">menu</button>
               <div class="dropdown-content">
-                <a href="#">Become a Member</a>
-                <a href="#">About Us</a>
-                <a href="#">Events</a>
-                <a href="#">Join Our Committee</a>
+                <a href="#our-team">Become a Member</a>
+                <a href="#our-team">About Us</a>
+                <a href="#events">Events</a>
+                <a href="#our-team">Join Our Committee</a>
                 <a href="#">Contact Us</a>
               </div>
             </div>
