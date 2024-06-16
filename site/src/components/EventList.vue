@@ -69,22 +69,33 @@ const past = ref([
 </template>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .outer {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  border-bottom: 1px solid #888;
+  width: 100%;
+  padding: 4vh;
+  background-color: var(--off-white);
 }
 
 .heading {
   font-family: Roxborough;
   color: #697caa;
-  font-size: 1.8rem;
+  font-size: 2.4em;
+  font-weight: bold; /* Consistent with .slogan */
 }
 
 .event-list {
   display: flex;
-  overflow: scroll;
+  overflow: auto;
   padding: 1.5rem 0.5rem;
+  width: 100%;
 }
 
 .category-list {
@@ -95,6 +106,7 @@ const past = ref([
 .inner-list {
   display: flex;
   gap: 1rem;
+  flex: 1;
 }
 
 .category {
@@ -103,11 +115,33 @@ const past = ref([
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   color: #e59ecd;
+  padding: 1vh;
 }
 
 /* hacky as fuck but using flex doesn't work due to bug in firefox */
 .category:nth-child(3) {
   margin-left: 1rem;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 1280px) {
+    .heading {
+        font-size: 2em !important;
+    }
+
+    .category {
+        font-size: 1.1em !important;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .heading {
+        font-size: 1.5em !important;
+    }
+    .category {
+        font-size: 1em !important;
+    }
 }
 
 @media (max-width: 600px) {
@@ -123,6 +157,7 @@ const past = ref([
   .inner-list {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .inner-list > * {
