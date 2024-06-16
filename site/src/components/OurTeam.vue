@@ -16,7 +16,7 @@
             <h1 id="subtitleText">Want to join us? Positions are <span 
                 style="color: var(--blue)">open</span>! Apply 
                 <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                style="color: var(--orange); text-decoration: underline;" span>here</a></h1>
+                style="color: var(--orange); text-decoration: underline;">here</a></h1>
 
     </v-container>
 </template>
@@ -62,13 +62,16 @@
 
     @media (max-width: 480px) {
         #imagecontainer {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 2fr);
         }
         #imagecontainer > :nth-child(n+4):nth-child(-n+6) {
             justify-self: center;
             display: flex;
             align-items: center;
             transform: none;
+        }
+        #imagecontainer > :nth-child(5) {
+            transform: translateX(55%) !important;
         }
     }
 
@@ -79,7 +82,7 @@
         font-size: max(2.5vw,35px);
     }
 
-    #subtitleText {
+    #subtitleText, a {
         text-align: center;
         font-size: max(1.5vw, 19px);
         transform: translateY(-40%);
