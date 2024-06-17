@@ -1,8 +1,9 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import EventCard from "@/components/EventCard.vue";
 
 const scrollContainer = ref(null);
+let autoScrollInterval = null;
 
 // TODO: fetch from CMS
 const upcoming = ref([
@@ -204,7 +205,27 @@ function scrollRight() {
 
   scrollContainer.value.scroll(x + sc.xPad, 0);
 }
+
+function pauseScrolling() {
+  clearInterval(autoScrollInterval);
+}
+
+function resumeScrolling() {
+  autoScrollInterval = setInterval(() => {
+    scrollRight();
+  }, 3000);
+}
+
+onMounted(() => {
+  resumeScrolling();
+
+  // Cleanup interval on component unmount
+  onUnmounted(() => {
+    clearInterval(autoScrollInterval);
+  });
+});
 </script>
+
 
 <template>
   <div class="outer">
@@ -219,7 +240,12 @@ function scrollRight() {
         </button>
       </div>
     </div>
-    <div class="event-list" ref="scrollContainer">
+    <div
+      class="event-list"
+      ref="scrollContainer"
+      @mouseover="pauseScrolling"
+      @mouseleave="resumeScrolling"
+    >
       <div class="category">upcoming</div>
       <div class="inner-list">
         <EventCard
@@ -245,10 +271,121 @@ function scrollRight() {
 </template>
 
 <style scoped>
+@font-face {
+  font-family: Roxborough;
+  src: url('../../../fonts/RoxboroughCF-Bold.otf');
+}
+
 * {
-  box-sizing: border-box;
+  font-family: Roxborough;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f4f9;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-container {
+  position: relative;
+}
+
+/* Container styles */
+.list-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Slogan styles */
+.slogan {
+  background-color: rgba(233, 233, 233, 0.9);
+  height: 6.89vw;
+  border-bottom: 1px solid #888;
+  color: #484848;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.063em;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slogan span {
+  border-right: 0.1em solid #888;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking cursor */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #888;
+  }
+}
+
+/* About section styles */
+.about {
+  background-color: rgba(233, 233, 233, 0.9);
+  border-bottom: 1px solid #888;
+  color: #484848;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+.committee-images {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.committee-image {
+  width: 32%;
+  height: auto;
+}
+
+.card-container {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 2.4em !important;
+  color: #e29062;
+  margin-top: 0.5vw;
+}
+
+.card-text {
+  font-size: 1.3em !important;
+  font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
+  line-height: 2em !important;
+  margin-top: 1.1vw;
+}
+
+.card {
+  font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
 }
 
 .outer {
@@ -270,7 +407,7 @@ function scrollRight() {
   font-family: Roxborough;
   color: #697caa;
   font-size: 2.4em;
-  font-weight: bold; /* Consistent with .slogan */
+  font-weight: bold;
 }
 
 .scroll-controls {
@@ -290,10 +427,16 @@ function scrollRight() {
 
 .event-list {
   display: flex;
-  overflow: auto;
+  overflow: hidden;
   padding: 1.5rem 0.5rem;
   scroll-behavior: smooth;
   width: 100%;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.event-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .category-list {
@@ -310,15 +453,8 @@ function scrollRight() {
 .category {
   font-family: Roxborough;
   font-size: 1.3rem;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
   color: #e59ecd;
   padding: 1vh;
-}
-
-/* hacky as fuck but using flex doesn't work due to bug in firefox */
-.category:nth-child(3) {
-  margin-left: 1rem;
 }
 
 /* Responsive styles */
@@ -333,32 +469,51 @@ function scrollRight() {
 }
 
 @media only screen and (max-width: 768px) {
-  .heading {
+  .slogan {
+    font-size: 1em;
+    height: auto;
+    padding: 10px;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .committee-images {
+    width: 100%;
+  }
+
+  .committee-image {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .card-container {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .card-title {
     font-size: 1.5em !important;
   }
-  .category {
+
+  .card-text {
     font-size: 1em !important;
   }
-}
 
-@media (max-width: 600px) {
+  .card {
+    font-size: 1em;
+  }
+
   .event-list {
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .scroll-controls {
-    display: none;
-  }
-
-  .category-list {
     flex-direction: column;
   }
 
   .inner-list {
     flex-direction: column;
     align-items: center;
-    width: 100%;
   }
 
   .inner-list > * {
@@ -366,13 +521,8 @@ function scrollRight() {
   }
 
   .category {
-    writing-mode: unset;
-    transform: none;
-  }
-
-  .category:nth-child(3) {
-    margin-left: 0;
-    margin-top: 1rem;
+    font-size: 1em !important;
   }
 }
 </style>
+
