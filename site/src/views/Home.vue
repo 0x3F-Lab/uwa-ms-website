@@ -4,6 +4,7 @@
   <HeaderSection />
 
   <OurTeam />
+  <Footer />
 </template>
 
 <script setup>
