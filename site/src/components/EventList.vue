@@ -228,7 +228,10 @@ onMounted(() => {
 
 
 <template>
-  <div class="outer">
+  <div class="outer" 
+    @mouseover="pauseScrolling"
+    @mouseleave="resumeScrolling"
+  >
     <div class="top">
       <span class="heading">Events</span>
       <div class="scroll-controls">
@@ -243,8 +246,6 @@ onMounted(() => {
     <div
       class="event-list"
       ref="scrollContainer"
-      @mouseover="pauseScrolling"
-      @mouseleave="resumeScrolling"
     >
       <div class="category">upcoming</div>
       <div class="inner-list">
