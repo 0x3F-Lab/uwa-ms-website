@@ -8,6 +8,9 @@
         <a href="instagram://user?username=uwamarketingsociety" onclick="href='https\://www.instagram.com/uwamarketingsociety/'" target="_blank" rel="noopener noreferrer" id='socials-instagram'>
           <img src='../../public/instagram-logo.svg' alt="Instagram Logo">
         </a>
+        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" id='socials-discord'>
+          <img src='../../public/discord-logo.svg' alt="Discord Logo">
+        </a>
       </div>
       <div id='footer-copyright'>
         <p>© 2024 UWA Marketing Society. All Rights Reserved </p>
@@ -44,12 +47,23 @@
 
   .footer > div:first-child {
     position: absolute;
-    left: 3em; /* Adjust this value to control the offset from the left */
+    left: 3em;
   }
 
   .footer > div:last-child {
     position: absolute;
-    right: 3em; /* Adjust this value to control the offset from the right */
+    right: 3em;
+  }
+
+  #footer-socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  #footer-socials img {
+    width: 2em;
   }
 
   #uwa-guild-logo {
@@ -58,10 +72,6 @@
 
   #uwa-logo {
     width: 12em;
-  }
-
-  #footer-socials img {
-    width: 2em;
   }
 
   @media only screen and (max-width: 768px) {
