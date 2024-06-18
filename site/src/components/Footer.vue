@@ -5,7 +5,7 @@
     </div>
     <div>
       <div id='footer-socials'>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" id='socials-instagram'>
+        <a href="instagram://user?username=uwamarketingsociety" onclick="href='https\://www.instagram.com/uwamarketingsociety/'" target="_blank" rel="noopener noreferrer" id='socials-instagram'>
           <img src='../../public/instagram-logo.svg' alt="Instagram Logo">
         </a>
       </div>
@@ -30,10 +30,10 @@
     display: flex; 
     align-items: center;
     justify-content: center;
-    padding: 1em 2.5em;
     text-align: center;
-    font-size: 0.85em;
     position: relative;
+    padding: 1em 2.5em;
+    font-size: 0.85em;
   }
 
   .footer > div {
