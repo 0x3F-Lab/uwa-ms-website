@@ -51,79 +51,77 @@
     }
 
     .info-section {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    border-top: 1px solid black;
-    background-color: var(--off-white);
-    padding: 1vw;
-}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid black;
+        background-color: var(--off-white);
+        padding: 1vw;
+    }
 
-.member-section {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center; /* Center the button horizontally */
-    width: 100%; /* Ensure the button section takes the full width */
-}
+    .member-section {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
-.member-button {
-    background-color: var(--pink);
-    color: black;
-    border: 1px solid black;
-    padding: 30px 40px;
-    border-radius: 5px;
-    font-size: 3em;
-    transform: translateX(-20vw)
-}
+    .member-button {
+        background-color: var(--pink);
+        color: black;
+        border: 1px solid black;
+        padding: 30px 40px;
+        border-radius: 5px;
+        font-size: 3em;
+        transform: translateX(-20vw)
+    }
 
-.logo-section {
-    display: flex;
-    justify-content: center; /* Center the logo horizontally */
-    width: 100%; /* Ensure the logo section takes the full width */
-}
+    .logo-section {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
-.logo {
-    width: 300px;
-    height: auto;
-    transform: translate(30vw, -15vh);
-}
+    .logo {
+        width: 300px;
+        height: auto;
+        transform: translate(30vw, -15vh);
+    }
 
-/* Remaining styles unchanged */
-.instagram-grid {
-    text-align: center;
-    background-color: var(--off-white);
-}
+    .instagram-grid {
+        text-align: center;
+        background-color: var(--off-white);
+    }
 
-.instagram-grid h2 {
-    color: var(--blue);
-    text-decoration: underline;
-}
+    .instagram-grid h2 {
+        color: var(--blue);
+        text-decoration: underline;
+    }
 
-.contact-info {
-    margin: 10px 0;
-}
+    .contact-info {
+        margin: 10px 0;
+    }
 
-.contact-info a {
-    color: #000;
-    text-decoration: none;
-}
+    .contact-info a {
+        color: #000;
+        text-decoration: none;
+    }
 
-.contact-info img {
-    width: 1.5em;
-}
+    .contact-info img {
+        width: 1.5em;
+    }
 
-.grid-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
+    .grid-container {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
 
-.grid-item img {
-    width: 80%;
-    height: auto;
-    border: 1px solid rgb(94, 88, 88);
-}
-
+    .grid-item img {
+        width: 80%;
+        height: auto;
+        border: 1px solid rgb(94, 88, 88);
+    }
 
   </style>
   
