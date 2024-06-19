@@ -4,10 +4,13 @@
   <HeaderSection />
 
   <OurTeam />
+  <InstagramGrid />
+
   <Footer />
 </template>
 
 <script setup>
   import OurTeam from '@/components/OurTeam.vue'
+  import InstagramGrid from '@/components/InstagramGrid.vue'
   import HeaderSection from '@/components/HeaderSection.vue'
 </script>
