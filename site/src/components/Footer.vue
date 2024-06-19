@@ -1,15 +1,15 @@
 <template>
   <div class='footer'>
     <div>
-      <img id='uwa-guild-logo' src='../../public/uwa-guild-logo.svg' alt="UWA Student Guild Logo">
+      <img id='uwa-guild-logo' src='/uwa-guild-logo.svg' alt="UWA Student Guild Logo">
     </div>
     <div>
       <div id='footer-socials'>
         <a href="instagram://user?username=uwamarketingsociety" onclick="href='https\://www.instagram.com/uwamarketingsociety/'" target="_blank" rel="noopener noreferrer" id='socials-instagram'>
-          <img src='../../public/instagram-logo.svg' alt="Instagram Logo">
+          <img src='/instagram-logo.svg' alt="Instagram Logo">
         </a>
         <a href="https://discord.com" target="_blank" rel="noopener noreferrer" id='socials-discord'>
-          <img src='../../public/discord-logo.svg' alt="Discord Logo">
+          <img src='/discord-logo.svg' alt="Discord Logo">
         </a>
       </div>
       <div id='footer-copyright'>
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div>
-      <img id='uwa-logo' src="../../public/uwa-logo.svg" alt="UWA Logo">
+      <img id='uwa-logo' src="/uwa-logo.svg" alt="UWA Logo">
     </div>
   </div>
 </template>
