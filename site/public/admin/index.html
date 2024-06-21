@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Content Manager</title>
+    <script src="https://unpkg.com/netlify-cms-app@^2.0.0/dist/netlify-cms.js"></script>
+  </head>
+  <body>
+    <script>
+      NetlifyCmsApp.init({
+        config: {
+          backend: {
+            name: 'git-gateway',
+            branch: 'CMS', // Branch to update (main/master)
+          },
+          media_folder: 'static/images/uploads', // Media files will be stored in the repo under static/images/uploads
+          public_folder: '/images/uploads',
+          collections: [
+            {
+              name: 'events',
+              label: 'Events',
+              folder: 'content/events',
+              create: true,
+              slug: '{{slug}}',
+              fields: [
+                { label: 'Title', name: 'title', widget: 'string' },
+                { label: 'Date', name: 'date', widget: 'datetime' },
+                { label: 'Description', name: 'description', widget: 'text' },
+                { label: 'Image', name: 'image', widget: 'image' },
+              ],
+            },
+          ],
+        },
+      });
+    </script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', user => {
+          if (!user) {
+            window.netlifyIdentity.on('login', () => {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
+    </script>
+
+  </body>
+</html>
