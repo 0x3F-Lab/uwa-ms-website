@@ -5,7 +5,7 @@
         <p>© 2024 UWA Marketing Society. All Rights Reserved. <span>Site designed and deployed by <a href="https://github.com/0x3F-Lab" target="_blank" rel="noreferrer noopener"><u>0x3F Lab.</u></a></span></p>
       </div>
       <div id='footer-logo'>
-        <img src="/uwa-logo.svg" alt="UWA Logo">
+        <img src="/uwa-logo-gray.svg" alt="UWA Logo">
       </div>
     </div>
   </div>
