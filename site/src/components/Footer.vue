@@ -2,7 +2,7 @@
   <div id='footer'>
     <div id='footer-inner'>
       <div id='footer-copyright'>
-        <p>© 2024 UWA Marketing Society. All Rights Reserved. By using this website, you agree to the use of cookies. </p>
+        <p>© 2024 UWA Marketing Society. All Rights Reserved. <span>Site designed and deployed by <a href="https://github.com/0x3F-Lab" target="_blank" rel="noreferrer noopener"><u>0x3F Lab.</u></a></span></p>
       </div>
       <div id='footer-logo'>
         <img src="/uwa-logo.svg" alt="UWA Logo">
@@ -32,6 +32,20 @@
     font-size: 0.9em;
   }
 
+  #footer-copyright {
+    margin-right: 2em;
+  }
+
+  #footer-copyright span {
+    font-size: 0.8em;
+    color: #363636;
+  }
+
+  #footer-copyright a {
+    font-size: 0.9em;
+    color: #363636;
+  }
+
   #footer-logo {
     margin-left: auto;
   }
@@ -42,7 +56,11 @@
 
   @media only screen and (max-width: 768px) {
     #footer{ 
-      font-size: 0.75em;
+      font-size: 0.65em;
+    }
+
+    #footer-copyright a {
+      font-size: 1em;
     }
   }
 </style>
