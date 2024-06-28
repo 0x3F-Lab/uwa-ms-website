@@ -12,21 +12,24 @@
 </template>
 
 <style scoped>
+@font-face {
+  font-family: Roxborough;
+  src: url('../../../fonts/RoxboroughCF-Bold.otf');
+}
+
   #footer {
-    border-left: 3em solid #E9E9E9;
-    border-right: 3em solid #E9E9E9;
+    border-top: 1px solid #888;
   }
 
   #footer-inner {
     transition: ease all .05s;
     background-color: #E9E9E9;
     font-family: Roxborough;
-    border-top: 1px solid #888;
     color: #484848;
     display: flex; 
     align-items: center;
     justify-content: flex-start;
-    text-align: center;
+    text-align: left;
     position: relative;
     padding: 1.5em 2em 2em 2em;
     font-size: 0.9em;
@@ -34,24 +37,24 @@
 
   #footer-copyright {
     margin-right: 2em;
-  }
-
-  #footer-copyright span {
     font-size: 0.8em;
+    font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
     color: #363636;
   }
 
   #footer-copyright a {
-    font-size: 0.9em;
-    color: #363636;
+    font-size: 0.8em;
+    color: var(--orange)
   }
+
 
   #footer-logo {
     margin-left: auto;
+    opacity: 0.8;
   }
 
   #footer-logo > img {
-    width: 8.5em;
+    width: 6.5em;
   }
 
   @media only screen and (max-width: 768px) {
