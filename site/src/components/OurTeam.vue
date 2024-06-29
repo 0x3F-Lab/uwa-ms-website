@@ -34,6 +34,7 @@
     border: 0px solid black;
     width: 100%;
     background-color: var(--off-white);
+    
   }
   
   /* Container for team images */
