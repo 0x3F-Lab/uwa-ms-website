@@ -362,29 +362,65 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiSloganTestSloganTest extends Schema.SingleType {
-  collectionName: 'slogan_tests';
+export interface ApiAboutUwaMsAboutUwaMs extends Schema.SingleType {
+  collectionName: 'about_uwa_ms_pl';
   info: {
-    singularName: 'slogan-test';
-    pluralName: 'slogan-tests';
-    displayName: 'SloganTest';
+    singularName: 'about-uwa-ms';
+    pluralName: 'about-uwa-ms-pl';
+    displayName: 'About UWA MS';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    slogan: Attribute.String;
+    Slogan: Attribute.String;
+    About: Attribute.Text;
+    HeaderImage: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::slogan-test.slogan-test',
+      'api::about-uwa-ms.about-uwa-ms',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::slogan-test.slogan-test',
+      'api::about-uwa-ms.about-uwa-ms',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCommitteeMemberCommitteeMember
+  extends Schema.CollectionType {
+  collectionName: 'committee_members';
+  info: {
+    singularName: 'committee-member';
+    pluralName: 'committee-members';
+    displayName: 'Committee Member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Role: Attribute.String;
+    Photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::committee-member.committee-member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::committee-member.committee-member',
       'oneToOne',
       'admin::user'
     > &
@@ -828,7 +864,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::slogan-test.slogan-test': ApiSloganTestSloganTest;
+      'api::about-uwa-ms.about-uwa-ms': ApiAboutUwaMsAboutUwaMs;
+      'api::committee-member.committee-member': ApiCommitteeMemberCommitteeMember;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

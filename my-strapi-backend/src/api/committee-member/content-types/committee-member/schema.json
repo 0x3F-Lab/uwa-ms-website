@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "committee_members",
+  "info": {
+    "singularName": "committee-member",
+    "pluralName": "committee-members",
+    "displayName": "Committee Member"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Role": {
+      "type": "string"
+    },
+    "Photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

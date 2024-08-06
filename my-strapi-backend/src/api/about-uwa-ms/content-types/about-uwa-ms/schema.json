@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uwa_ms_pl",
+  "info": {
+    "singularName": "about-uwa-ms",
+    "pluralName": "about-uwa-ms-pl",
+    "displayName": "About UWA MS",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Slogan": {
+      "type": "string"
+    },
+    "About": {
+      "type": "text"
+    },
+    "HeaderImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
