@@ -1,6 +1,6 @@
 <template>
   <div class="slogan">
-    Elevating minds and empowering future.
+    {{ slogan }}
   </div>
   <div class="about">
     <div class="vl"></div>
@@ -17,6 +17,27 @@
     <EventList />
   </v-container>
 </template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      slogan: '',
+    };
+  },
+  async created() {
+    try {
+      const response = await axios.get('http://localhost:1338/api/slogan-test');
+      this.slogan = response.data.data.attributes.slogan;
+    } catch (error) {
+      console.error('Error fetching slogan:', error);
+    }
+  },
+};
+</script>
+
 
 <style scoped>
 @font-face {

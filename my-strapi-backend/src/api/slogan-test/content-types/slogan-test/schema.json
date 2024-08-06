@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "slogan_tests",
+  "info": {
+    "singularName": "slogan-test",
+    "pluralName": "slogan-tests",
+    "displayName": "SloganTest"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slogan": {
+      "type": "string"
+    }
+  }
+}
