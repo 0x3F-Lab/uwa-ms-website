@@ -5,72 +5,46 @@ import EventCard from "@/components/EventCard.vue";
 const scrollContainer = ref(null);
 let autoScrollInterval = null;
 
-// TODO: fetch from CMS
 const upcoming = ref([
   {
     imgSrc: "/images/event_sample_1.png",
-    description: "Event 1 Promo Marketing",
+    title: "Event 1 Promo Marketing",
+    description: "dummy info here",
     href: "event1",
+    date: "2024-09-01",
+    location: "New York, NY",
   },
   {
     imgSrc: "/images/event_sample_2.png",
-    description: "Event 2 Promo Marketing",
+    title: "Event 2 Promo Marketing",
+    description: "dummy info here",
     href: "event2",
+    date: "2024-10-01",
+    location: "Los Angeles, CA",
   },
-  {
-    imgSrc: "/images/event_sample_3.png",
-    description: "Event 3 Promo Marketing",
-    href: "event3",
-  },
-  {
-    imgSrc: "/images/event_sample_1.png",
-    description: "Event 1 Promo Marketing",
-    href: "event1",
-  },
-  {
-    imgSrc: "/images/event_sample_2.png",
-    description: "Event 2 Promo Marketing",
-    href: "event2",
-  },
-  {
-    imgSrc: "/images/event_sample_3.png",
-    description: "Event 3 Promo Marketing",
-    href: "event3",
-  },
+  // Add more events
 ]);
 
 const past = ref([
   {
     imgSrc: "/images/event_sample_1.png",
-    description: "Event 1 Promo Marketing",
+    title: "Event 1 Promo Marketing",
+    description: "dummy info here",
     href: "event1",
+    date: "2023-09-01",
+    location: "New York, NY",
   },
   {
     imgSrc: "/images/event_sample_2.png",
-    description: "Event 2 Promo Marketing",
+    title: "Event 2 Promo Marketing",
+    description: "dummy info here",
     href: "event2",
+    date: "2023-10-01",
+    location: "Los Angeles, CA",
   },
-  {
-    imgSrc: "/images/event_sample_3.png",
-    description: "Event 3 Promo Marketing",
-    href: "event3",
-  },
-  {
-    imgSrc: "/images/event_sample_1.png",
-    description: "Event 1 Promo Marketing",
-    href: "event1",
-  },
-  {
-    imgSrc: "/images/event_sample_2.png",
-    description: "Event 2 Promo Marketing",
-    href: "event2",
-  },
-  {
-    imgSrc: "/images/event_sample_3.png",
-    description: "Event 3 Promo Marketing",
-    href: "event3",
-  },
+  // Add more events
 ]);
+
 
 function getScrollConstants() {
   const innerLists = scrollContainer.value.querySelectorAll(".inner-list");
@@ -253,8 +227,11 @@ onMounted(() => {
           v-for="event in upcoming"
           :key="event.href"
           :imgSrc="event.imgSrc"
+          :title="event.title"
           :description="event.description"
           :href="event.href"
+          :date="event.date"
+          :location="event.location"
         />
       </div>
       <div class="category">past</div>
@@ -263,13 +240,17 @@ onMounted(() => {
           v-for="event in past"
           :key="event.href"
           :imgSrc="event.imgSrc"
+          :title="event.title"
           :description="event.description"
           :href="event.href"
+          :date="event.date"
+          :location="event.location"
         />
       </div>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 @font-face {
