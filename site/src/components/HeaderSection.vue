@@ -49,7 +49,7 @@
   transition: ease all .05s;
   background-color: #E9E9E9;
   font-family: Roxborough;
-  height: 16vw;
+  height: 18vw;
   border-bottom: 1px solid #888;
   color: #484848;
   display: flex; 
@@ -60,7 +60,7 @@
 .vl {
   transition: ease all .05s;
   border-left: 1px solid #888;
-  height: 16vw;
+  height: 18vw;
   position: absolute;
   left: 50%;
   top: auto;
@@ -69,23 +69,24 @@
 .card-container {
   margin-left: 51.35vw;
   margin-right: 2.083vw;
+  margin-bottom: 1vw;
+  margin-top: 0.5vw;
   width: 50vw;
   height: 13.1vw;
 }
 
 .card-title {
   transition: ease all .05s;
-  font-size: 2.4em !important;
+  font-size: 2.2em !important;
   color: #E29062;
-  margin-top: 0.5vw;
 }
 
 .card-text {
   transition: ease all .05s;
-  font-size: 1.3em !important;
+  font-size: 1.25em !important;
   font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
   line-height: 2em !important;
-  margin-top: 1.1vw;
+  margin-top: 1.5vw;
 }
 
 .card {

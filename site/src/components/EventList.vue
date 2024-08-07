@@ -437,6 +437,8 @@ body {
   font-size: 1.3rem;
   color: #e59ecd;
   padding: 1vh;
+  padding-left: 5vh;
+  padding-right: 3vh;
 }
 
 /* Responsive styles */
@@ -504,6 +506,18 @@ body {
 
   .category {
     font-size: 1em !important;
+    padding-left: 0;
+    padding-top: 2vh;
+  }
+
+  .heading{
+    margin-bottom: -3vh;
+    margin-top: -2vh;
+  }
+
+  .scroll-controls{
+    margin-bottom: -3vh;
+    margin-top: -2vh;
   }
 }
 </style>
