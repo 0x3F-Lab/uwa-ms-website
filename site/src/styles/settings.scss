@@ -9,14 +9,15 @@
 //   $color-pack: false
 // );
 
+
 :root {
-    --off-white: #EAEAEA;
+    --off-white: #E9E9E9;
     --blue: #647DAE;
     --orange: #F08B58;
     --pink: #F19BD0;
     --grey: #474747;
   }
-
+  
   @font-face {
     font-family: 'HelveticaWorld';
     src: url('/fonts/HelveticaWorld-Regular.ttf-Regular.woff') format('ttf');
