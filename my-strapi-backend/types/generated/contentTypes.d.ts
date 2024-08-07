@@ -362,72 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutUwaMsAboutUwaMs extends Schema.SingleType {
-  collectionName: 'about_uwa_ms_pl';
-  info: {
-    singularName: 'about-uwa-ms';
-    pluralName: 'about-uwa-ms-pl';
-    displayName: 'About UWA MS';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Slogan: Attribute.String;
-    About: Attribute.Text;
-    HeaderImage: Attribute.Media<'images'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::about-uwa-ms.about-uwa-ms',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::about-uwa-ms.about-uwa-ms',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCommitteeMemberCommitteeMember
-  extends Schema.CollectionType {
-  collectionName: 'committee_members';
-  info: {
-    singularName: 'committee-member';
-    pluralName: 'committee-members';
-    displayName: 'Committee Member';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String;
-    Role: Attribute.String;
-    Photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::committee-member.committee-member',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::committee-member.committee-member',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -854,6 +788,109 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutUwaMsAboutUwaMs extends Schema.SingleType {
+  collectionName: 'about_uwa_ms_pl';
+  info: {
+    singularName: 'about-uwa-ms';
+    pluralName: 'about-uwa-ms-pl';
+    displayName: 'About UWA MS';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Slogan: Attribute.String;
+    About: Attribute.Text;
+    HeaderImage: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-uwa-ms.about-uwa-ms',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-uwa-ms.about-uwa-ms',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCommitteeMemberCommitteeMember
+  extends Schema.CollectionType {
+  collectionName: 'committee_members';
+  info: {
+    singularName: 'committee-member';
+    pluralName: 'committee-members';
+    displayName: 'Committee Member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Role: Attribute.String;
+    Photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::committee-member.committee-member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::committee-member.committee-member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Events';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Description: Attribute.Text;
+    Date: Attribute.DateTime;
+    EventImg: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Location: Attribute.String;
+    EventURL: Attribute.String;
+    Upcoming: Attribute.Boolean;
+    Name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -864,8 +901,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::about-uwa-ms.about-uwa-ms': ApiAboutUwaMsAboutUwaMs;
-      'api::committee-member.committee-member': ApiCommitteeMemberCommitteeMember;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -874,6 +909,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::about-uwa-ms.about-uwa-ms': ApiAboutUwaMsAboutUwaMs;
+      'api::committee-member.committee-member': ApiCommitteeMemberCommitteeMember;
+      'api::event.event': ApiEventEvent;
     }
   }
 }

@@ -22,6 +22,7 @@
   </div>
 </template>
 
+
 <script>
 import axios from 'axios';
 
@@ -36,7 +37,6 @@ export default {
   async created() {
     try {
       const response = await axios.get('http://localhost:1338/api/about-uwa-ms?populate=*');
-      console.log(response);
       this.slogan = response.data.data.attributes.Slogan;
       this.about = response.data.data.attributes.About;
       this.headerImageUrl = 'http://localhost:1338' + response.data.data.attributes.HeaderImage.data.attributes.url;
