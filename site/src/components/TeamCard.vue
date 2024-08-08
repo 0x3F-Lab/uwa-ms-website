@@ -40,6 +40,7 @@
   
   /* Styling for the position */
   p {
+    font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
     padding-top: 5%;
     color: var(--pink);
     font-size: 1em;
