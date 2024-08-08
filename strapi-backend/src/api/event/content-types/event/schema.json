@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Events",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "Date": {
+      "type": "datetime"
+    },
+    "EventImg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Location": {
+      "type": "string"
+    },
+    "EventURL": {
+      "type": "string",
+      "required": true
+    },
+    "Upcoming": {
+      "type": "boolean",
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
