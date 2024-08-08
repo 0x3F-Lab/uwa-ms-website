@@ -53,7 +53,7 @@ export default {
 
 /* Main container for the team section */
 .our-team {
-  padding: 4vh;
+  padding: 5vh;
   border: 0px solid black;
   width: 100%;
   background-color: var(--off-white);
@@ -62,16 +62,16 @@ export default {
 /* Container for team images */
 .image-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  width: 85%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 2rem;
+  justify-content: center;
+  width: 90%;
   margin: auto;
 }
 
 .team-card {
-  width: 150px; 
-  height: 150px; 
-  overflow: hidden;
+  width: 300px; 
+  height: auto; 
   border-radius: 50%; 
 }
 
@@ -102,13 +102,7 @@ export default {
 
 @media only screen and (max-width: 900px) {
   .image-container {
-    grid-template-columns: repeat(3, 2fr);
-  }
-  .image-container > :nth-child(n+4):nth-child(-n+6) {
-    justify-self: center;
-    display: flex;
-    align-items: center;
-    transform: translateX(55%);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
@@ -122,22 +116,27 @@ export default {
   }
 
   .image-container {
-    grid-template-columns: repeat(3, 2fr);
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .team-card h2, .team-card p {
+    font-size: 1.2em !important; /* Increase font size for mobile */
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .image-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-  .image-container > :nth-child(n+4):nth-child(-n+6) {
-    transform: none;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
   }
 
-  .image-container > :nth-child(5) {
-    transform: translateX(55%) !important;
+  .team-card h2, .team-card p {
+    font-size: 1.2em !important; /* Increase font size for mobile */
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word;
   }
 }
 </style>

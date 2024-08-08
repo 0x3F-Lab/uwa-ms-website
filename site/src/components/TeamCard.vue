@@ -25,9 +25,9 @@
 .image-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 75%; /* 4:3 Aspect Ratio (change this to 56.25% for 16:9) */
+  padding-top: 75%; 
   overflow: hidden;
-  border-radius: 12px; /* To match the image's rounded-xl class */
+  border-radius: 12px;
 }
 
 /* Ensure images are responsive and cover the entire wrapper */
@@ -43,6 +43,7 @@ img {
 /* Center-align text within the card */
 h2, p {
   text-align: center;
+  white-space: normal; 
 }
 
 /* Styling for the team card */
@@ -53,18 +54,26 @@ h2, p {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 200px;
+  height: auto;
   width: 100%;
-  max-width: 200px; /* Adjust as necessary */
+  max-width: 300px;
+}
+
+/* Ensure the info box is properly displayed */
+.info-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
 }
 
 /* Styling for the name */
 h2 {
   color: var(--blue);
   font-size: 1.5em;
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /* Styling for the position */
@@ -72,36 +81,33 @@ p {
   padding-top: 5%;
   color: var(--pink);
   font-size: 1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /* Responsive styles */
 @media only screen and (max-width: 1280px) {
   .team-card {
-    max-height: 180px;
-    max-width: 180px; /* Adjust as necessary */
+    max-width: 250px;
   }
 
   h2 {
-    font-size: 1.2em !important;
+    font-size: 1.4em !important;
   }
 
   p {
-    font-size: 0.8em !important;
+    font-size: 1em !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .team-card {
-    max-height: 150px;
-    max-width: 150px; /* Adjust as necessary */
+    max-width: 100%;
   }
 
-  h2 {
-    font-size: 1.1em !important;
-  }
-
-  p {
-    font-size: 0.8em !important;
+  h2, p {
+    font-size: 1.2em !important;
+    white-space: normal;
   }
 }
 </style>

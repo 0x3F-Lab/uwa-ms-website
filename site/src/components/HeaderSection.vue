@@ -22,7 +22,6 @@
   </div>
 </template>
 
-
 <script>
 import axios from 'axios';
 
@@ -62,7 +61,8 @@ export default {
   transition: ease all .05s;
   background-color: #E9E9E9;
   font-family: Roxborough;
-  height: 6.89vw;
+  height: auto;
+  padding: 1em 0;
   border-bottom: 1px solid #888;
   color: #484848;
   display: flex;
@@ -70,7 +70,6 @@ export default {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  text-indent: 4.167%;
   font-size: 2.063em;
   font-weight: bold;
 }
@@ -79,31 +78,30 @@ export default {
   transition: ease all .05s;
   background-color: #E9E9E9;
   font-family: Roxborough;
-  height: 18vw;
-  border-bottom: 1px solid #888;
-  color: #484848;
-  display: flex; 
-  align-items: center;
+  display: flex;
+  align-items: center; 
   flex-direction: row;
+  border-bottom: 1px solid #888;
 }
 
 .header-image {
   flex: 1;
   border-right: 1px solid #888;
-  height: 100%;
-  overflow: hidden; /* Ensure the image doesn't overflow */
-  margin: 0; /* Remove any margin */
-  padding: 0; /* Remove any padding */
-  display: flex; /* Ensure flex properties apply */
+  overflow: hidden; 
+  margin: 0;
+  padding: 0; 
+  display: flex; 
+  align-items: center; 
 }
 
 .header-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure image covers the container without stretching */
-  display: block; /* Remove default inline spacing */
-  margin: 0; /* Remove any margin */
-  padding: 0; /* Remove any padding */
+  height: auto; 
+  object-fit: cover; 
+  display: block; 
+  margin: 0;
+  padding: 0;
+  max-height: 100%; 
 }
 
 .card-container {
@@ -112,21 +110,25 @@ export default {
   margin-right: 20px;
   margin-bottom: 1vw;
   margin-top: 0.5vw;
-  height: auto;
+  height: auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
 }
 
 .card-title {
   transition: ease all .05s;
-  font-size: 2.2em !important;
+  font-size: 2.2em !important; 
   color: #E29062;
 }
 
 .card-text {
   transition: ease all .05s;
-  font-size: 1.25em !important;
+  font-size: 1.25em !important; 
   font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
   line-height: 2em !important;
   margin-top: 1.5vw;
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
 }
 
 .card {
@@ -140,19 +142,18 @@ export default {
   }
 
   .card-text {
-    font-size: 0.9em !important;
+    font-size: 1em !important;
   }
 
   .card-container {
-    height: auto;
+    height: auto; 
   }
 }
 
 @media only screen and (max-width: 768px) {
   .slogan {
-    font-size: 1em;
-    height: auto;
-    padding: 10px;
+    font-size: 1.5em;
+    padding: 0.5em 0;
   }
 
   .about {
@@ -164,17 +165,17 @@ export default {
   .header-image {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid #888; /* Add bottom border for mobile view */
+    border-bottom: 1px solid #888; 
   }
 
   .header-image img {
-    max-height: 50vh; /* Ensure image doesn't take too much vertical space on mobile */
+    max-height: 50vh;
   }
 
   .card-container {
     margin: 0;
     width: 100%;
-    height: auto;
+    height: auto; 
     padding: 10px;
   }
 
@@ -190,6 +191,7 @@ export default {
     font-size: 1em; 
   }
 }
+
 </style>
 
 <script setup>
