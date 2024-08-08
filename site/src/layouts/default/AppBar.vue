@@ -199,7 +199,6 @@ nav ul {
 .join a {
   display: block;
   position: relative;
-  padding: 10px 20px;
   z-index: 1;
   mix-blend-mode: difference;
 }
