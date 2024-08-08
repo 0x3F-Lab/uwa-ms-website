@@ -91,13 +91,19 @@ export default {
   flex: 1;
   border-right: 1px solid #888;
   height: 100%;
-  max-height: 18vw; /* Ensure image isn't too tall */
+  overflow: hidden; /* Ensure the image doesn't overflow */
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+  display: flex; /* Ensure flex properties apply */
 }
 
 .header-image img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensure image covers the container without stretching */
+  display: block; /* Remove default inline spacing */
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
 }
 
 .card-container {
