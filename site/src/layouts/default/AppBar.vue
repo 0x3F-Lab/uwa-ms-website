@@ -4,6 +4,7 @@
       <nav class="left-menu">
         <ul>
           <li class="join">
+            <div class="button__bg"></div>
             <a href="#">Join Us!</a>
           </li>
         </ul>
@@ -36,6 +37,7 @@
   font-family: Roxborough;
   src: url('../../../fonts/RoxboroughCF-Bold.otf');
 }
+
 
 .top-nav { 
   display: flex;
@@ -134,6 +136,72 @@ nav ul {
   outline-style: solid;
   outline-color: #6c6c6c;
   outline-width: 1px;
+  background: none;
+  position: relative;
+  display: inline-block;
+}
+
+.join .button__bg {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #E59ECD;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.join:hover .button__bg {
+  transform: scale3d(1.2, 1.2, 1);
+  outline-style: solid;
+  outline-color: #000000;
+  outline-width: 1px;
+}
+
+.join .button__bg::before {
+  content: '';
+  position: absolute;
+  background: #F08B58;
+  width: 110%;
+  height: 0;
+  padding-bottom: 110%;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);
+}
+
+.join:hover .button__bg::before {
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+  transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+}
+
+.join .button__bg::after {
+  content: '';
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.join:hover .button__bg::after {
+  opacity: 1;
+  transition-duration: 0.01s;
+  transition-delay: 0.3s;
+}
+
+.join a {
+  display: block;
+  position: relative;
+  padding: 10px 20px;
+  z-index: 1;
+  mix-blend-mode: difference;
 }
 
 @media only screen and (max-width: 768px) {
@@ -177,7 +245,6 @@ nav ul {
   .top-nav {
     padding: 1rem;
   }
-
 
   .dropbtn, .join a {
     font-size: 1rem;
