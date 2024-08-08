@@ -503,15 +503,21 @@ body {
     padding-top: 2vh;
   }
 
-  .heading{
+  .heading {
     margin-bottom: -3vh;
     margin-top: -2vh;
   }
 
-  .scroll-controls{
+  .scroll-controls {
     margin-bottom: -3vh;
     margin-top: -2vh;
   }
+
+  /* Hide scroll controls on mobile */
+  .scroll-controls {
+    display: none;
+  }
 }
+
 </style>
 

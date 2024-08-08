@@ -65,6 +65,7 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 2rem;
   justify-content: center;
+  justify-items: center;
   width: 90%;
   margin: auto;
 }
@@ -121,8 +122,8 @@ export default {
   }
 
   .team-card h2, .team-card p {
-    font-size: 1.2em !important; /* Increase font size for mobile */
-    white-space: normal; /* Allow text to wrap */
+    font-size: 1.2em !important; 
+    white-space: normal; 
     word-wrap: break-word;
   }
 }
@@ -134,8 +135,8 @@ export default {
   }
 
   .team-card h2, .team-card p {
-    font-size: 1.2em !important; /* Increase font size for mobile */
-    white-space: normal; /* Allow text to wrap */
+    font-size: 1.2em !important; 
+    white-space: normal; 
     word-wrap: break-word;
   }
 }
