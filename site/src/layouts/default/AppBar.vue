@@ -9,7 +9,7 @@
         </ul>
       </nav>
     </div>
-    <img class="logo" src="../../../newLogo.png" />
+    <img class="logo" src="/newLogo.png" />
     <div class="right-wrapper">
       <nav class="right-menu">
         <ul>

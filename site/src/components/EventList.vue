@@ -1,50 +1,54 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import axios from 'axios';
 import EventCard from "@/components/EventCard.vue";
 
 const scrollContainer = ref(null);
 let autoScrollInterval = null;
 
-const upcoming = ref([
-  {
-    imgSrc: "/images/event_sample_1.png",
-    title: "Event 1 Promo Marketing",
-    description: "dummy info here",
-    href: "event1",
-    date: "2024-09-01",
-    location: "New York, NY",
-  },
-  {
-    imgSrc: "/images/event_sample_2.png",
-    title: "Event 2 Promo Marketing",
-    description: "dummy info here",
-    href: "event2",
-    date: "2024-10-01",
-    location: "Los Angeles, CA",
-  },
-  // Add more events
-]);
+const upcoming = ref([]);
+const past = ref([]);
 
-const past = ref([
-  {
-    imgSrc: "/images/event_sample_1.png",
-    title: "Event 1 Promo Marketing",
-    description: "dummy info here",
-    href: "event1",
-    date: "2023-09-01",
-    location: "New York, NY",
-  },
-  {
-    imgSrc: "/images/event_sample_2.png",
-    title: "Event 2 Promo Marketing",
-    description: "dummy info here",
-    href: "event2",
-    date: "2023-10-01",
-    location: "Los Angeles, CA",
-  },
-  // Add more events
-]);
+const fetchEvents = async () => {
+  try {
+    const response = await axios.get('http://localhost:1338/api/events?populate=*');
+    const events = response.data.data;
 
+    console.log(events)
+    // Parse events
+    events.forEach(event => {
+      const eventData = event.attributes;
+      console.log(eventData)
+      const eventObject = {
+        imgSrc: "http://localhost:1338" + eventData.EventImg.data.attributes.formats.medium.url,
+        title: eventData.Name,
+        description: eventData.Description,
+        date: eventData.Date,
+        location: eventData.Location,
+        href: eventData.EventURL
+      };
+      
+      if (eventData.Upcoming) {
+        upcoming.value.push(eventObject);
+      } else {
+        past.value.push(eventObject);
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching events:', error);
+  }
+};
+
+// Call fetchEvents when the component is mounted
+onMounted(() => {
+  fetchEvents();
+  resumeScrolling();
+  onUnmounted(() => {
+    clearInterval(autoScrollInterval);
+  });
+});
+
+// The rest of your existing methods
 
 function getScrollConstants() {
   const innerLists = scrollContainer.value.querySelectorAll(".inner-list");
@@ -189,17 +193,7 @@ function resumeScrolling() {
     scrollRight();
   }, 3000);
 }
-
-onMounted(() => {
-  resumeScrolling();
-
-  // Cleanup interval on component unmount
-  onUnmounted(() => {
-    clearInterval(autoScrollInterval);
-  });
-});
 </script>
-
 
 <template>
   <div class="outer" 
@@ -250,7 +244,6 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
 
 <style scoped>
 @font-face {
@@ -437,6 +430,8 @@ body {
   font-size: 1.3rem;
   color: #e59ecd;
   padding: 1vh;
+  padding-left: 5vh;
+  padding-right: 3vh;
 }
 
 /* Responsive styles */
@@ -504,7 +499,25 @@ body {
 
   .category {
     font-size: 1em !important;
+    padding-left: 0;
+    padding-top: 2vh;
+  }
+
+  .heading {
+    margin-bottom: -3vh;
+    margin-top: -2vh;
+  }
+
+  .scroll-controls {
+    margin-bottom: -3vh;
+    margin-top: -2vh;
+  }
+
+  /* Hide scroll controls on mobile */
+  .scroll-controls {
+    display: none;
   }
 }
+
 </style>
 

@@ -1,22 +1,50 @@
 <template>
-  <div class="slogan">
-    Elevating minds and empowering future.
-  </div>
-  <div class="about">
-    <div class="vl"></div>
-    <div class="card-container">
-      <v-card variant="text">
-        <v-card-title class="card-title">Who are we?</v-card-title>
-        <v-card-text class="card-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat nisl sit amet quam ultricies, sit amet malesuada justo convallis.
-        </v-card-text>
-      </v-card>
+  <div>
+    <div class="slogan">
+      {{ slogan }}
     </div>
+    <div class="about">
+      <div class="header-image" v-if="headerImageUrl">
+        <img :src="headerImageUrl" alt="Header Image" />
+      </div>
+      <div class="card-container">
+        <v-card variant="text">
+          <v-card-title class="card-title">Who are we?</v-card-title>
+          <v-card-text class="card-text">
+            {{ about }}
+          </v-card-text>
+        </v-card>
+      </div>
+    </div>
+    <v-container id="list-container" fluid>
+      <EventList />
+    </v-container>
   </div>
-  <v-container id="list-container" fluid>
-    <EventList />
-  </v-container>
 </template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      slogan: '',
+      about: '',
+      headerImageUrl: '',
+    };
+  },
+  async created() {
+    try {
+      const response = await axios.get('http://localhost:1338/api/about-uwa-ms?populate=*');
+      this.slogan = response.data.data.attributes.Slogan;
+      this.about = response.data.data.attributes.About;
+      this.headerImageUrl = 'http://localhost:1338' + response.data.data.attributes.HeaderImage.data.attributes.url;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  },
+};
+</script>
 
 <style scoped>
 @font-face {
@@ -33,14 +61,15 @@
   transition: ease all .05s;
   background-color: #E9E9E9;
   font-family: Roxborough;
-  height: 6.89vw;
+  height: auto;
+  padding: 1em 0;
   border-bottom: 1px solid #888;
   color: #484848;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  text-indent: 4.167%;
   font-size: 2.063em;
   font-weight: bold;
 }
@@ -49,43 +78,57 @@
   transition: ease all .05s;
   background-color: #E9E9E9;
   font-family: Roxborough;
-  height: 16vw;
-  border-bottom: 1px solid #888;
-  color: #484848;
-  display: flex; 
-  align-items: center;
+  display: flex;
+  align-items: center; 
   flex-direction: row;
+  border-bottom: 1px solid #888;
 }
 
-.vl {
-  transition: ease all .05s;
-  border-left: 1px solid #888;
-  height: 16vw;
-  position: absolute;
-  left: 50%;
-  top: auto;
+.header-image {
+  flex: 1;
+  border-right: 1px solid #888;
+  overflow: hidden; 
+  margin: 0;
+  padding: 0; 
+  display: flex; 
+  align-items: center; 
+}
+
+.header-image img {
+  width: 100%;
+  height: auto; 
+  object-fit: cover; 
+  display: block; 
+  margin: 0;
+  padding: 0;
+  max-height: 100%; 
 }
 
 .card-container {
-  margin-left: 51.35vw;
-  margin-right: 2.083vw;
-  width: 50vw;
-  height: 13.1vw;
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 1vw;
+  margin-top: 0.5vw;
+  height: auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
 }
 
 .card-title {
   transition: ease all .05s;
-  font-size: 2.4em !important;
+  font-size: 2.2em !important; 
   color: #E29062;
-  margin-top: 0.5vw;
 }
 
 .card-text {
   transition: ease all .05s;
-  font-size: 1.3em !important;
+  font-size: 1.25em !important; 
   font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
   line-height: 2em !important;
-  margin-top: 1.1vw;
+  margin-top: 1.5vw;
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
 }
 
 .card {
@@ -99,19 +142,18 @@
   }
 
   .card-text {
-    font-size: 0.9em !important;
+    font-size: 1em !important;
   }
 
   .card-container {
-    height: auto;
+    height: auto; 
   }
 }
 
 @media only screen and (max-width: 768px) {
   .slogan {
-    font-size: 1em;
-    height: auto;
-    padding: 10px;
+    font-size: 1.5em;
+    padding: 0.5em 0;
   }
 
   .about {
@@ -120,14 +162,20 @@
     text-align: center;
   }
 
-  .vl {
-    display: none;
+  .header-image {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #888; 
+  }
+
+  .header-image img {
+    max-height: 50vh;
   }
 
   .card-container {
     margin: 0;
     width: 100%;
-    height: auto;
+    height: auto; 
     padding: 10px;
   }
 
@@ -143,6 +191,7 @@
     font-size: 1em; 
   }
 }
+
 </style>
 
 <script setup>
