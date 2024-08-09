@@ -1,33 +1,54 @@
+<script setup>
+import { defineProps } from "vue";
+
+/* Define props for the component */
+const props = defineProps({
+  name: String,
+  position: String,
+  image: {
+    type: String,
+    required: true,
+  },
+});
+</script>
 <template>
-  <v-container class="big-div">
-    <v-card class="team-card">
-      <div class="image-wrapper">
-        <img class="rounded-xl" :src="image" alt="Committe Photo">
-      </div>
-      <v-card-text class="info-box">
-        <h2>{{ name }}</h2>
-        <p>{{ position }}</p>
-      </v-card-text>
-    </v-card>
-  </v-container>
+  <div class="team-card">
+    <div class="image-wrapper">
+      <img class="rounded-xl" :src="image" alt="Committee Photo" />
+    </div>
+    <div class="info-box">
+      <h2>{{ name }}</h2>
+      <p>{{ position }}</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-/* Main container for the team section */
-.big-div {
+/* Styling for the team card */
+.team-card {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
 }
 
 /* Wrapper to maintain aspect ratio */
 .image-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 75%; 
+  padding-top: 75%;
   overflow: hidden;
   border-radius: 12px;
+}
+
+/* Ensure the info box is properly displayed */
+.info-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 /* Ensure images are responsive and cover the entire wrapper */
@@ -41,31 +62,9 @@ img {
 }
 
 /* Center-align text within the card */
-h2, p {
-  text-align: center;
-  white-space: normal; 
-}
-
-/* Styling for the team card */
-.team-card {
-  background-color: transparent;
-  box-shadow: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: auto;
-  width: 100%;
-  max-width: 300px;
-}
-
-/* Ensure the info box is properly displayed */
-.info-box {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
+h2,
+p {
+  white-space: normal;
 }
 
 /* Styling for the name */
@@ -78,7 +77,6 @@ h2 {
 
 /* Styling for the position */
 p {
-  padding-top: 5%;
   color: var(--pink);
   font-size: 1em;
   text-overflow: ellipsis;
@@ -102,26 +100,14 @@ p {
 
 @media only screen and (max-width: 768px) {
   .team-card {
-    max-width: 100%;
+    width: 100%;
   }
 
-  h2, p {
+  h2,
+  p {
     font-size: 1.2em !important;
     white-space: normal;
+    word-wrap: break-word;
   }
 }
 </style>
-
-<script setup>
-import { defineProps } from 'vue';
-
-/* Define props for the component */
-const props = defineProps({
-  name: String,
-  position: String,
-  image: {
-    type: String,
-    required: true
-  }
-});
-</script>

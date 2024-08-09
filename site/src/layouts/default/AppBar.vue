@@ -33,12 +33,6 @@
 </template>
 
 <style>
-@font-face {
-  font-family: Roxborough;
-  src: url('../../../fonts/RoxboroughCF-Bold.otf');
-}
-
-
 .top-nav { 
   display: flex;
   justify-content: space-between;
@@ -90,6 +84,7 @@ nav ul {
 
 .dropdown {
   position: relative;
+  display: inline-block;
 }
 
 .dropbtn {
@@ -112,6 +107,7 @@ nav ul {
   font-size: 1.25rem;
   right: 0; 
   padding: 20px;
+  
 }
 
 .dropdown-content a {
@@ -163,7 +159,7 @@ nav ul {
 .join .button__bg::before {
   content: '';
   position: absolute;
-  background: #F08B58;
+  background: #ddb6d0;
   width: 110%;
   height: 0;
   padding-bottom: 110%;
@@ -181,7 +177,6 @@ nav ul {
 .join .button__bg::after {
   content: '';
   position: absolute;
-  
   top: 0;
   left: 0;
   width: 100%;
@@ -202,6 +197,7 @@ nav ul {
   z-index: 1;
   mix-blend-mode: difference;
 }
+
 
 @media only screen and (max-width: 768px) {
   .top-nav {
@@ -279,7 +275,6 @@ nav ul {
     padding: 1.5rem;
   }
 }
-
 </style>
 
 <script setup>
