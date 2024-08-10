@@ -33,8 +33,9 @@
                 <a href="#events">Events</a>
                 <a href="#our-team">Join Our Committee</a>
                 <a href="mailto:uwamarketingsociety@gmail.com" target="_blank"
-                  >Contact Us</a
-                >
+                  >Contact Us
+                  <v-icon size="x-small" :icon="mdiOpenInNew" />
+                  </a>
               </div>
             </div>
           </li>
