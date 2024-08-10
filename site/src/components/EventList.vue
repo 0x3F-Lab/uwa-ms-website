@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue';
 import axios from 'axios';
-import EventCard from "@/components/EventCard.vue";
+import EventCard from '@/components/EventCard.vue';
 
 const scrollContainer = ref(null);
 let autoScrollInterval = null;
@@ -11,23 +11,27 @@ const past = ref([]);
 
 const fetchEvents = async () => {
   try {
-    const response = await axios.get('http://localhost:1338/api/events?populate=*');
+    const response = await axios.get(
+      'http://localhost:1338/api/events?populate=*'
+    );
     const events = response.data.data;
 
-    console.log(events)
+    console.log(events);
     // Parse events
-    events.forEach(event => {
+    events.forEach((event) => {
       const eventData = event.attributes;
-      console.log(eventData)
+      console.log(eventData);
       const eventObject = {
-        imgSrc: "http://localhost:1338" + eventData.EventImg.data.attributes.formats.medium.url,
+        imgSrc:
+          'http://localhost:1338' +
+          eventData.EventImg.data.attributes.formats.medium.url,
         title: eventData.Name,
         description: eventData.Description,
         date: eventData.Date,
         location: eventData.Location,
-        href: eventData.EventURL
+        href: eventData.EventURL,
       };
-      
+
       if (eventData.Upcoming) {
         upcoming.value.push(eventObject);
       } else {
@@ -51,25 +55,26 @@ onMounted(() => {
 // The rest of your existing methods
 
 function getScrollConstants() {
-  const innerLists = scrollContainer.value.querySelectorAll(".inner-list");
-  const firstListRect = innerLists.item(0).getBoundingClientRect();
+  const innerLists = scrollContainer.value.querySelectorAll('.inner-list');
+  const firstListRect = innerLists?.item(0).getBoundingClientRect();
 
-  const cardWidth = scrollContainer.value
-    .querySelector(".inner-list")
-    .querySelector(".event-card")
-    .getBoundingClientRect().width;
+  const cardWidth =
+    scrollContainer.value
+      .querySelector('.inner-list')
+      ?.querySelector('.event-card')
+      ?.getBoundingClientRect().width ?? 0;
 
-  const categories = scrollContainer.value.querySelectorAll(".category");
-  const cat1Rect = categories.item(0).getBoundingClientRect();
-  const cat2Rect = categories.item(1).getBoundingClientRect();
-  const cat1Width = cat1Rect.width;
-  const cat2Width = cat2Rect.width;
+  const categories = scrollContainer.value.querySelectorAll('.category');
+  const cat1Rect = categories?.item(0).getBoundingClientRect();
+  const cat2Rect = categories?.item(1).getBoundingClientRect();
+  const cat1Width = cat1Rect?.width ?? 0;
+  const cat2Width = cat2Rect?.width ?? 0;
 
   const xPad = 8.0; // 0.5rem
   const cardGap = 16.0; // 1.0rem
   const listGap = 16.0; // 1.0rem
   const offset1 = cat1Width;
-  const offset2 = offset1 + firstListRect.width;
+  const offset2 = offset1 + (firstListRect?.width ?? 0);
   const offset3 = offset2 + listGap + cat2Width;
 
   return {
@@ -196,10 +201,7 @@ function resumeScrolling() {
 </script>
 
 <template>
-  <div class="outer" 
-    @mouseover="pauseScrolling"
-    @mouseleave="resumeScrolling"
-  >
+  <div class="outer" @mouseover="pauseScrolling" @mouseleave="resumeScrolling">
     <div class="top">
       <span class="heading">Events</span>
       <div class="scroll-controls">
@@ -211,10 +213,7 @@ function resumeScrolling() {
         </button>
       </div>
     </div>
-    <div
-      class="event-list"
-      ref="scrollContainer"
-    >
+    <div class="event-list" ref="scrollContainer">
       <div class="category">upcoming</div>
       <div class="inner-list">
         <EventCard
@@ -382,7 +381,6 @@ body {
   font-family: Roxborough;
   color: #697caa;
   font-size: 2.4em;
-  font-weight: bold;
 }
 
 .scroll-controls {
@@ -518,6 +516,4 @@ body {
     display: none;
   }
 }
-
 </style>
-

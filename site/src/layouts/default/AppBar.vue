@@ -3,8 +3,16 @@
     <div class="left-wrapper">
       <nav class="left-menu">
         <ul>
-          <li class="join">
-            <a href="#">Join Us!</a>
+          <li>
+            <v-btn
+              href="#"
+              class="join-btn no-uppercase"
+              variant="flat"
+              color="pink"
+              size="x-large"
+              rounded="xl"
+              >Join Us!</v-btn
+            >
           </li>
         </ul>
       </nav>
@@ -32,12 +40,7 @@
 </template>
 
 <style>
-@font-face {
-  font-family: Roxborough;
-  src: url('../../../fonts/RoxboroughCF-Bold.otf');
-}
-
-.top-nav { 
+.top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,10 +50,11 @@
   font-family: Roxborough;
   border-bottom: 1px solid #888;
   height: auto;
-  transition: ease all .05s;
+  transition: ease all 0.05s;
 }
 
-.left-wrapper, .right-wrapper {
+.left-wrapper,
+.right-wrapper {
   display: flex;
   align-items: center;
   padding-left: 5vw;
@@ -67,12 +71,12 @@
   justify-content: flex-end;
 }
 
-a { 
-  text-decoration: none; 
+a {
+  text-decoration: none;
   color: #484848;
   font-size: 1.2rem;
   font-weight: bold;
-} 
+}
 
 nav ul {
   display: flex;
@@ -96,7 +100,7 @@ nav ul {
   border: none;
   font-size: 1.25rem;
   font-weight: bold;
-  color: #697CAA;
+  color: #697caa;
   cursor: pointer;
   padding-bottom: 1rem;
   padding-top: 1rem;
@@ -110,12 +114,12 @@ nav ul {
   border-radius: 15px;
   display: none;
   position: absolute;
+  right: 0;
   background-color: #E9E9E9;
   min-width: 15rem;
   box-shadow: 0px 4px 12px 0px rgba(71, 71, 71, 0.2);
   z-index: 1;
   font-size: 1.2rem;
-  right: 0; 
   padding: 1rem;
   text-align: right;
   margin-right: -1.5rem;
@@ -129,20 +133,29 @@ nav ul {
 }
 
 .dropdown-content a:hover {
-  color: #E59ECD;
+  color: var(--deep-pink);
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.join {
-  border-radius: 25px;
-  background: #E59ECD;
-  padding: 10px 20px;
-  outline-style: solid;
-  outline-color: #6c6c6c;
+.join-btn {
+  border-radius: 25px !important;
+  background: var(--pink);
   outline-width: 1px;
+  padding-bottom: 20px !important;
+  color: var(--deep-pink) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: initial !important;
+  padding: 0px !important;
+  border: 1px solid var(--grey) !important;
+
+  .v-btn__content {
+    padding: 10px 20px;
+    font-weight: 700 !important;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -158,7 +171,8 @@ nav ul {
     margin-top: 0.5rem;
   }
 
-  .left-menu, .right-menu {
+  .left-menu,
+  .right-menu {
     width: 100%;
     justify-content: center;
   }
@@ -186,8 +200,19 @@ nav ul {
 }
 
 @media only screen and (max-width: 600px) {
-  .dropbtn, .join a {
+  .top-nav {
+    padding: 1rem;
+  }
+
+  .dropbtn,
+  .join a {
     font-size: 1rem;
+  }
+
+  .dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+    
   }
 
   .dropbtn{
@@ -214,7 +239,26 @@ nav ul {
 }
 
 
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  .top-nav{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .logo {
+    width: 40vw;
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1300px) {
+  .logo {
+    width: 35vw;
+  }
+}
+
+.no-uppercase {
+  text-transform: unset !important;
+}
 </style>
 
-<script setup>
-</script>
+<script setup></script>
