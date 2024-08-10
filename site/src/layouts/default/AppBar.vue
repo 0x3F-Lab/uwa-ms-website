@@ -49,8 +49,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: #e9e9e9;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #E9E9E9; 
   font-family: Roxborough;
   border-bottom: 1px solid #888;
   height: auto;
@@ -166,6 +167,7 @@ nav ul {
   .top-nav {
     flex-direction: column;
     align-items: center;
+    padding-top: 1rem;
     padding-bottom: 0.2rem;
   }
 
@@ -219,6 +221,41 @@ nav ul {
   .dropbtn {
     padding-bottom: 0.6rem;
     padding-top: 0.6rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  .top-nav{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .logo {
+    width: 40vw;
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1300px) {
+  .logo {
+    width: 35vw;
+  }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  .top-nav{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .logo {
+    width: 40vw;
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1300px) {
+  .logo {
+    width: 35vw;
   }
 }
 
