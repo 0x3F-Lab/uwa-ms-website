@@ -4,6 +4,7 @@
  */
 const config = {
   singleQuote: true,
+  'html-whitespace-sensitivity': ignore,
 };
 
 module.exports = config;
