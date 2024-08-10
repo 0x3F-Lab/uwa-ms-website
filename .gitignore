@@ -1,2 +1,7 @@
 .cache
 .DS_Store
+.env
+site/dist
+strapi_backend/.env
+strapi_backend/build
+
