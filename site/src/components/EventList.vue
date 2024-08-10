@@ -201,7 +201,12 @@ function resumeScrolling() {
 </script>
 
 <template>
-  <div class="outer" @mouseover="pauseScrolling" @mouseleave="resumeScrolling">
+  <div
+    class="outer"
+    id="events"
+    @mouseover="pauseScrolling"
+    @mouseleave="resumeScrolling"
+  >
     <div class="top">
       <span class="heading">Events</span>
       <div class="scroll-controls">

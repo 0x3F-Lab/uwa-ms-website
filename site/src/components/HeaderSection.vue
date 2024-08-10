@@ -3,7 +3,7 @@
     <div class="slogan">
       {{ slogan }}
     </div>
-    <div class="about">
+    <div class="about" id="about">
       <div class="header-image" v-if="headerImageUrl">
         <img :src="headerImageUrl" alt="Header Image" />
       </div>
@@ -35,10 +35,14 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get('http://localhost:1338/api/about-uwa-ms?populate=*');
+      const response = await axios.get(
+        'http://localhost:1338/api/about-uwa-ms?populate=*'
+      );
       this.slogan = response.data.data.attributes.Slogan;
       this.about = response.data.data.attributes.About;
-      this.headerImageUrl = 'http://localhost:1338' + response.data.data.attributes.HeaderImage.data.attributes.url;
+      this.headerImageUrl =
+        'http://localhost:1338' +
+        response.data.data.attributes.HeaderImage.data.attributes.url;
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -58,8 +62,8 @@ export default {
 }
 
 .slogan {
-  transition: ease all .05s;
-  background-color: #E9E9E9;
+  transition: ease all 0.05s;
+  background-color: #e9e9e9;
   font-family: Roxborough;
   height: auto;
   padding: 1em 0;
@@ -75,11 +79,11 @@ export default {
 }
 
 .about {
-  transition: ease all .05s;
-  background-color: #E9E9E9;
+  transition: ease all 0.05s;
+  background-color: #e9e9e9;
   font-family: Roxborough;
   display: flex;
-  align-items: center; 
+  align-items: center;
   flex-direction: row;
   border-bottom: 1px solid #888;
 }
@@ -87,21 +91,21 @@ export default {
 .header-image {
   flex: 1;
   border-right: 1px solid #888;
-  overflow: hidden; 
+  overflow: hidden;
   margin: 0;
-  padding: 0; 
-  display: flex; 
-  align-items: center; 
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .header-image img {
   width: 100%;
-  height: auto; 
-  object-fit: cover; 
-  display: block; 
+  height: auto;
+  object-fit: cover;
+  display: block;
   margin: 0;
   padding: 0;
-  max-height: 100%; 
+  max-height: 100%;
 }
 
 .card-container {
@@ -110,21 +114,21 @@ export default {
   margin-right: 20px;
   margin-bottom: 1vw;
   margin-top: 0.5vw;
-  height: auto; 
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .card-title {
-  transition: ease all .05s;
-  font-size: 2.2em !important; 
-  color: #E29062;
+  transition: ease all 0.05s;
+  font-size: 2.2em !important;
+  color: #e29062;
 }
 
 .card-text {
-  transition: ease all .05s;
-  font-size: 1.25em !important; 
+  transition: ease all 0.05s;
+  font-size: 1.25em !important;
   font-family: 'HelveticaWorld', Arial, Helvetica, sans-serif;
   line-height: 2em !important;
   margin-top: 1.5vw;
@@ -146,7 +150,7 @@ export default {
   }
 
   .card-container {
-    height: auto; 
+    height: auto;
   }
 }
 
@@ -158,14 +162,14 @@ export default {
 
   .about {
     height: auto;
-    flex-direction: column; 
+    flex-direction: column;
     text-align: center;
   }
 
   .header-image {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid #888; 
+    border-bottom: 1px solid #888;
   }
 
   .header-image img {
@@ -175,25 +179,24 @@ export default {
   .card-container {
     margin: 0;
     width: 100%;
-    height: auto; 
+    height: auto;
     padding: 10px;
   }
 
   .card-title {
-    font-size: 1.5em !important; 
+    font-size: 1.5em !important;
   }
 
   .card-text {
-    font-size: 1em !important; 
+    font-size: 1em !important;
   }
 
   .card {
-    font-size: 1em; 
+    font-size: 1em;
   }
 }
-
 </style>
 
 <script setup>
-import EventList from "@/components/EventList.vue";
+import EventList from '@/components/EventList.vue';
 </script>

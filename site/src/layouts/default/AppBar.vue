@@ -5,7 +5,7 @@
         <ul>
           <li>
             <v-btn
-              href="#"
+              href="https://events.humanitix.com/uwams-membership-2024-2"
               class="join-btn no-uppercase"
               variant="flat"
               color="pink"
@@ -25,11 +25,15 @@
             <div class="dropdown">
               <button class="dropbtn">menu</button>
               <div class="dropdown-content">
-                <a href="#our-team">Become a Member</a>
-                <a href="#our-team">About Us</a>
+                <a href="https://events.humanitix.com/uwams-membership-2024-2"
+                  >Become a Member</a
+                >
+                <a href="#about">About Us</a>
                 <a href="#events">Events</a>
                 <a href="#our-team">Join Our Committee</a>
-                <a href="#">Contact Us</a>
+                <a href="mailto:uwamarketingsociety@gmail.com" target="_blank"
+                  >Contact Us</a
+                >
               </div>
             </div>
           </li>
@@ -106,15 +110,15 @@ nav ul {
 }
 
 .dropbtn:hover {
-    color: var(--orange);
-  }
+  color: var(--orange);
+}
 
 .dropdown-content {
   border-radius: 15px;
   display: none;
   position: absolute;
   right: 0;
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
   min-width: 15rem;
   box-shadow: 0px 4px 12px 0px rgba(71, 71, 71, 0.2);
   z-index: 1;
@@ -210,10 +214,9 @@ nav ul {
   .dropdown-content {
     left: 50%;
     transform: translateX(-50%);
-    
   }
 
-  .dropbtn{
+  .dropbtn {
     padding-bottom: 0.6rem;
     padding-top: 0.6rem;
   }
