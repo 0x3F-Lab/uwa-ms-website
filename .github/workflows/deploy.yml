@@ -1,0 +1,25 @@
+name: Deploy to VPS
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing build steps on VPS over ssh
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        # TODO: Use SSH key instead of password
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USERNAME }}
+        password: ${{ secrets.VPS_PASSWORD }}
+        port: ${{ secrets.VPS_PORT }}
+        script_stop: true
+        script: |
+          cd ~/repos/uwa-ms-website
+          git checkout main
+          git pull
+          cd site
+          npm install
+          yes | npx vite build --outDir /var/www/uwams
+          
