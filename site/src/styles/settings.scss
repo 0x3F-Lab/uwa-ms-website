@@ -9,39 +9,43 @@
 //   $color-pack: false
 // );
 
-
 :root {
-    --off-white: #E9E9E9;
-    --blue: #647DAE;
-    --orange: #F08B58;
-    --pink: #F19BD0;
-    --grey: #474747;
-  }
-  
-  @font-face {
-    font-family: 'HelveticaWorld';
-    src: url('/fonts/HelveticaWorld-Regular.ttf-Regular.woff') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Roxborough';
-    src: url('/fonts/RoxboroughCF-Regular.otf') format('otf');
-    font-weight: bold;
-    font-style: normal;
-  }
+  --off-white: #e9e9e9;
+  --blue: #647dae;
+  --orange: #f08b58;
+  --pink: #f19bd0;
+  --deep-pink: #9d5685; // darker tone of the provided pink
+  --grey: #474747;
+}
 
-  @font-face {
-    font-family: 'Roxborough';
-    src: url('/fonts/RoxboroughCF-Bold.otf') format('otf');
-    font-weight: bold;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'HelveticaWorld';
+  src: url('/fonts/HelveticaWorld-Regular.ttf-Regular.woff') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: 'Roxborough';
-    src: url('/fonts/RoxboroughCF-ExtraBold.otf') format('otf');
-    font-weight: bolder;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'Roxborough';
+  src: url('/fonts/RoxboroughCF-Regular.otf') format('otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roxborough';
+  src: url('/fonts/RoxboroughCF-Bold.otf') format('otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roxborough';
+  src: url('/fonts/RoxboroughCF-ExtraBold.otf') format('otf');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}

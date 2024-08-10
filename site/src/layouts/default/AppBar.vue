@@ -3,9 +3,16 @@
     <div class="left-wrapper">
       <nav class="left-menu">
         <ul>
-          <li class="join">
-            <div class="button__bg"></div>
-            <a href="#">Join Us!</a>
+          <li>
+            <v-btn
+              href="#"
+              class="join-btn no-uppercase"
+              variant="flat"
+              color="pink"
+              size="x-large"
+              rounded="xl"
+              >Join Us!</v-btn
+            >
           </li>
         </ul>
       </nav>
@@ -33,19 +40,20 @@
 </template>
 
 <style>
-.top-nav { 
+.top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #E9E9E9; 
+  background-color: #e9e9e9;
   font-family: Roxborough;
   border-bottom: 1px solid #888;
   height: auto;
-  transition: ease all .05s;
+  transition: ease all 0.05s;
 }
 
-.left-wrapper, .right-wrapper {
+.left-wrapper,
+.right-wrapper {
   display: flex;
   align-items: center;
   padding-left: 5vw;
@@ -62,12 +70,12 @@
   justify-content: flex-end;
 }
 
-a { 
-  text-decoration: none; 
+a {
+  text-decoration: none;
   color: #484848;
   font-size: 1.25rem;
   font-weight: bold;
-} 
+}
 
 nav ul {
   display: flex;
@@ -84,7 +92,6 @@ nav ul {
 
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
 .dropbtn {
@@ -92,7 +99,7 @@ nav ul {
   border: none;
   font-size: 1.25rem;
   font-weight: bold;
-  color: #697CAA;
+  color: #697caa;
   cursor: pointer;
 }
 
@@ -100,14 +107,13 @@ nav ul {
   border-radius: 15px;
   display: none;
   position: absolute;
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
   min-width: 200px;
   box-shadow: 0px 4px 12px 0px rgba(71, 71, 71, 0.2);
   z-index: 1;
   font-size: 1.25rem;
-  right: 0; 
+  right: 0;
   padding: 20px;
-  
 }
 
 .dropdown-content a {
@@ -118,86 +124,30 @@ nav ul {
 }
 
 .dropdown-content a:hover {
-  color: #E59ECD;
+  color: var(--deep-pink);
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.join {
-  border-radius: 25px;
-  background: #E59ECD;
-  padding: 10px 20px;
-  outline-style: solid;
-  outline-color: #6c6c6c;
+.join-btn {
+  border-radius: 25px !important;
+  background: var(--pink);
   outline-width: 1px;
-  background: none;
-  position: relative;
-  display: inline-block;
-}
+  padding-bottom: 20px !important;
+  color: var(--deep-pink) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: initial !important;
+  padding: 0px !important;
+  border: 1px solid var(--grey) !important;
 
-.join .button__bg {
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #E59ECD;
-  border-radius: 25px;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+  .v-btn__content {
+    padding: 10px 20px;
+    font-weight: 700 !important;
+  }
 }
-
-.join:hover .button__bg {
-  transform: scale3d(1.2, 1.2, 1);
-  outline-style: solid;
-  outline-color: #000000;
-  outline-width: 1px;
-}
-
-.join .button__bg::before {
-  content: '';
-  position: absolute;
-  background: #ddb6d0;
-  width: 110%;
-  height: 0;
-  padding-bottom: 110%;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);
-}
-
-.join:hover .button__bg::before {
-  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
-  transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
-}
-
-.join .button__bg::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.join:hover .button__bg::after {
-  opacity: 1;
-  transition-duration: 0.01s;
-  transition-delay: 0.3s;
-}
-
-.join a {
-  display: block;
-  position: relative;
-  z-index: 1;
-  mix-blend-mode: difference;
-}
-
 
 @media only screen and (max-width: 768px) {
   .top-nav {
@@ -211,7 +161,8 @@ nav ul {
     margin-bottom: 10px;
   }
 
-  .left-menu, .right-menu {
+  .left-menu,
+  .right-menu {
     width: 100%;
     justify-content: center;
   }
@@ -241,9 +192,9 @@ nav ul {
     padding: 1rem;
   }
 
-  .dropbtn, .join a {
+  .dropbtn,
+  .join a {
     font-size: 1rem;
-    color: #E59ECD;
   }
 
   .dropdown-content {
@@ -275,7 +226,10 @@ nav ul {
     padding: 1.5rem;
   }
 }
+
+.no-uppercase {
+  text-transform: unset !important;
+}
 </style>
 
-<script setup>
-</script>
+<script setup></script>

@@ -2,7 +2,14 @@
 import { ref } from 'vue';
 import ModalComponent from './EventModal.vue';
 
-const props = defineProps(["imgSrc", "title", "description", "href", "date", "location"]);
+const props = defineProps([
+  'imgSrc',
+  'title',
+  'description',
+  'href',
+  'date',
+  'location',
+]);
 
 const showModal = ref(false);
 
@@ -17,13 +24,17 @@ const closeModal = () => {
 // Convert Zulu time (UTC) to local time
 const convertToLocalTime = (dateString) => {
   const date = new Date(dateString);
-  return date.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  return date.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
 };
 
 const localDate = convertToLocalTime(props.date);
-
 </script>
-
 
 <template>
   <div>
@@ -34,22 +45,25 @@ const localDate = convertToLocalTime(props.date);
     </a>
     <ModalComponent :show="showModal" @close="closeModal">
       <h2 class="title">{{ props.title }}</h2>
-      <span class="details" v-if="props.date">{{ localDate }}</span><span class="details" v-if="props.location"> - {{ props.location }}</span>
+      <span class="details" v-if="props.date">{{ localDate }}</span
+      ><span class="details" v-if="props.location">
+        - {{ props.location }}</span
+      >
       <p class="description">{{ props.description }}</p>
-      <a v-if="props.href" :href="props.href" target="_n" class="more-btn">More info</a>
+      <a v-if="props.href" :href="props.href" target="_n" class="more-btn"
+        >More info</a
+      >
     </ModalComponent>
   </div>
 </template>
 
-
 <style scoped>
-
 .details {
-  color: #E59ECD;
+  color: #e59ecd;
   width: 100%;
 }
 
-.title  {
+.title {
   padding: 5px;
 }
 
@@ -60,7 +74,7 @@ const localDate = convertToLocalTime(props.date);
 
 .more-btn {
   font-size: 1rem;
-  background: #E59ECD;
+  background: #e59ecd;
   border: solid 1px var(--grey);
   margin: 20px;
   padding: 10px;
@@ -91,7 +105,8 @@ const localDate = convertToLocalTime(props.date);
   z-index: 1;
 }
 
-.event-card > h2, .details {
+.event-card > h2,
+.details {
   z-index: 10;
   max-width: 80%;
   text-align: center;
