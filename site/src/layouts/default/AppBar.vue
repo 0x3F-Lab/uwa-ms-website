@@ -26,8 +26,9 @@
               <button class="dropbtn">menu</button>
               <div class="dropdown-content">
                 <a href="https://events.humanitix.com/uwams-membership-2024-2"
-                  >Become a Member</a
-                >
+                  >Become a Member
+                  <v-icon size="x-small" :icon="mdiOpenInNew" />
+                </a>
                 <a href="#about">About Us</a>
                 <a href="#events">Events</a>
                 <a href="#our-team">Join Our Committee</a>
@@ -118,8 +119,8 @@ nav ul {
   display: none;
   position: absolute;
   right: 0;
-  background-color: #e9e9e9;
-  min-width: 15rem;
+  background-color: var(--off-white);
+  min-width: 16rem;
   box-shadow: 0px 4px 12px 0px rgba(71, 71, 71, 0.2);
   z-index: 1;
   font-size: 1.2rem;
@@ -129,7 +130,7 @@ nav ul {
 }
 
 .dropdown-content a {
-  color: #474747;
+  color: var(--grey);
   padding: 10px;
   text-decoration: none;
   display: block;
@@ -191,7 +192,6 @@ nav ul {
   .dropdown-content {
     left: 50%;
     transform: translateX(-50%);
-    min-width: 11rem;
     padding: 0.5rem;
   }
 
@@ -227,4 +227,6 @@ nav ul {
 }
 </style>
 
-<script setup></script>
+<script setup>
+import { mdiOpenInNew } from '@mdi/js';
+</script>
