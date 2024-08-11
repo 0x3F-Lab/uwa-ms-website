@@ -2,7 +2,6 @@
 
 <template>
   <HeaderSection />
-  Test
   <OurTeam />
   <InstagramPosts />
   <Footer />
